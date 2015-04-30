@@ -37,6 +37,8 @@ gem "less-rails-bootstrap"
 gem "koala", "~> 1.10.0rc"
 gem "font-awesome-rails"
 gem "jquery-ui-rails"
+gem 'angular_rails_csrf'
+gem 'angularjs-rails', '~> 1.3.15'
 
 gem "rails_12factor"
 gem "rest-client"

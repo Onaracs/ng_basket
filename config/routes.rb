@@ -29,6 +29,6 @@ Rails.application.routes.draw do
   get 'ng_basket_links', to: 'links#ng_basket_links', as: 'ng_basket_links', defaults: { format:'json' }
 
 
-  post 'new_link', to: 'links#new_link', as: 'new_link'
+  post 'new_link', to: 'links#new_link', as: 'new_link', defaults: { format:'json'}
   post 'sent_link', to: 'shared_links#sent_link', as: 'sent_link'
 end

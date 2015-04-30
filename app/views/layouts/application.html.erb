@@ -27,7 +27,7 @@
   <link rel="chrome-webstore-item" href="https://chrome.google.com/webstore/detail/jcglidocjalkkefbmnobddombekpancl">
 </head>
 
-<body>
+<body ng-app="ngApp">
   <div class="navbar">
     <div class="navbar-inner">
       <%= image_tag 'basketblack128.png', class: "basket-img"%>
@@ -88,23 +88,6 @@
     </div>
   </section>
 
-  <section id="friends">
-    <div class="friends-wrapper">
-        <div class="friends-header">
-          <h5>Friends using Basket</h5>
-            <% if current_user %>
-              <button class="invite-friends-btn"><i class="fa fa-facebook"></i> Invite Friends</button>
-            <% end %>
-        </div>
-
-        <ul id="friends-list">
-          <% if current_user %>
-            <%= render "users/friends" %>
-          <% end %>
-        </ul>
-
-    </div>
-  </section>
   </div>
 
 <script src="http://connect.facebook.net/en_US/all.js"></script>
