@@ -1,0 +1,48 @@
+<div class="folder-name">
+  <h1>Shared</h1>
+</div>
+
+<% @links.each do |link| %>
+<div class="shared-link-container <%= link[0].id %>">
+  <div class="sender-info">
+    <img src="<%= link[2] %>">
+    <h4>
+      <%= link[1] %>
+      <br />
+      <i class="fa fa-calendar"></i> <%= link[0].created_at.strftime("%A, %b %d") %>
+      <br>
+      <i class="fa fa-clock-o"></i> <%= link[0].created_at.strftime("%l:%M%P") %>
+    </h4>
+  </div>
+  <div class="sender-message">
+    <div class="sender-message-container">
+      <i class="fa fa-pencil-square-o"></i>"<%= link[0].message %>"
+    </div>
+  </div>
+
+  <div class="folder-link">
+    <!-- <div class="img-holder">
+      <img src="<%#= link[0].image %>">
+    </div> -->
+
+    <div class="link-trash">
+      <%= link_to shared_link_path(link[0]), method: :delete, remote: true do %>
+        <i class="fa fa-trash"></i>
+      <% end %>
+    </div>
+    <div class="text-holder">
+      <h3>
+        <a href="<%= link[0].url %>" class="title">
+          <%= truncate(link[0].title, length: 50) %>
+        </a>
+      </h3>
+
+      <a href="<%= link[0].url %>">
+        <%= truncate(link[0].url, length: 60) %>
+      </a>
+    </div>
+
+  </div>
+  <br />
+</div>
+<% end %>

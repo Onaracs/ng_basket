@@ -1,0 +1,122 @@
+.baskets-wrapper {
+  float: left; 
+  display: inline-block;
+  background: #191919;
+  color: white;
+  width: 20%;
+  min-height: 500px;
+
+  position: absolute;
+  height: 100%;
+  left: 0;
+  overflow-y: auto;
+  font-family: 'Lato';
+
+  @media(max-width: 768px){
+    display: none;
+  }
+
+  .new-basket-btn {
+    margin: -11px 0 -11px 24px;
+    a {
+      color: white;
+      font-size: 16px;
+    }
+  }
+
+  .login-to-create{
+    width: 100%;
+    text-align: center;
+  }
+
+  #new-basket-form-container {
+    margin-left: 24px;
+    display: none;
+
+    #folder_name {
+      &:focus {
+        border: 1px solid #90EE90;
+      }
+    }
+
+    .create_button,
+    .hide_button {
+      font-family: 'Lato';
+      border-radius: 8px;
+      background-color: #f5f5f5;
+      border: 1px solid #dddddd;
+    }
+  }
+
+  .baskets {
+    margin-left: 0;
+
+    .notifications{
+      display: inline-block;
+      float: right;
+      margin-right: 14px;
+    }
+    
+    li {
+      list-style: none;
+      padding: 10px 0 10px 25px;
+      border-top: 1px solid #212121;
+      border-bottom: 1px solid #0a0c0e;
+
+      a {
+        color: white;
+        font-size: 16px;
+        width: 100%;
+      }
+
+      &:hover {
+        background: #111;
+        border-top: 1px solid #111;
+        border-bottom: 1px solid #0a0c0e;
+      }
+
+      .basket-trash {
+        cursor: pointer;
+        color: #44494C;
+        left: 91%;
+        margin-top: 2px;
+        position: absolute;
+
+        &:hover{
+          color: #f5f5f5;
+        }
+      }
+    }
+  }
+}
+
+
+.delete-basket{
+  display: none;
+
+  .delete-btns{
+    margin-top: 8px;
+    font-size: 16px;
+    color: red;
+
+    .cancel-basket-delete,
+    .confirm-basket-delete{
+      display: inline-block;
+      border: 2px solid #ddd;
+      background: #fff;
+      padding: 5px;
+      border-radius: 15px;
+      color: black;
+      cursor: pointer;
+
+      a{
+        color: black;
+        text-decoration: none;
+      }
+
+      &:hover{
+        background-color: #ddd;
+      }
+    }
+  }
+}

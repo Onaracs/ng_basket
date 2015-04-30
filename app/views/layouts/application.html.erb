@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Basket</title>
+  <link rel="shortcut icon" href="../assets/images/flavicon.ico" type="image/x-icon" />
+  <link rel="shortcut icon" href="../assets/images/favicon.ico">
+  <%= favicon_link_tag 'favicon.ico' %>
+  <%= javascript_include_tag 'application' %>
+  <%= stylesheet_link_tag    'application', media: 'all' %>
+  <%= csrf_meta_tags %>
+  <meta name="description" content="Social bookmarking site to easily save and share your favorite links with your friends. Download the chrome extension to get the full functionality." />
+  <meta property="og:title" content="Basket" />
+  <meta property="og:site_name" content="Basket" />
+  <meta property="og:description" content="Social bookmarking site to easily save and share your favorite links with your friends. Download the chrome extension to get the full functionality." />
+  <meta property=”og:image” content="../assets/images/basketgreen128.png" /> 
+  <meta property="twitter:card" content="summary" />
+  <meta property="twitter:title" content="Basket" />
+  <meta property="twitter:description" content="Social bookmarking site to easily save and share your favorite links with your friends. Download the chrome extension to get the full functionality." />
+
+
+  <link href="//fonts.googleapis.com/css?family=Lato:100italic,100,300italic,300,400italic,400,700italic,700,900italic,900" rel="stylesheet" type="text/css">
+  <link href='http://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
+  <link href='http://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet' type='text/css'>
+
+  <!-- <link rel="stylesheet" href="/../assets/font-awesome-4.0.3/css/font-awesome.min.css"> -->
+  <script src="http://connect.facebook.net/en_US/all.js"></script>
+  <link rel="chrome-webstore-item" href="https://chrome.google.com/webstore/detail/jcglidocjalkkefbmnobddombekpancl">
+</head>
+
+<body>
+  <div class="navbar">
+    <div class="navbar-inner">
+      <%= image_tag 'basketblack128.png', class: "basket-img"%>
+      <h1>Basket <div class="beta">beta</div></h1>
+        <% if current_user %>
+          <%= render "users/usernav" %>
+        <% else %>
+          <%= render "users/guestnav" %>
+        <% end %>
+    </div>
+  </div>
+
+  <div class="container">
+  <section id="baskets">
+    <div class="baskets-wrapper">
+      <br>
+        <% if current_user %>
+          <div class="new-basket-btn">
+            <%= link_to "+ New Basket", new_folder_path, id: "new_folder", remote: true %>
+          </div>
+        <% else %>
+          <div class="login-to-create">
+            Login to start creating baskets
+          </div>
+        <% end %>
+        <br>
+
+        <% if current_user %>
+          <div id="new-basket-form-container">
+            <%= render "folders/form" %>
+          </div>
+
+
+          <ul class="baskets">
+            <div id="shared_basket">
+                <li>
+                  <%= link_to "Shared", shared_basket_path(current_user.shared_basket) %>
+                  <!-- <div class="notifications">
+                    <%#= SharedBasket.notifications(current_user.id) %>
+                  </div> -->
+                </li>
+            </div>
+
+
+            <div id="user_folders">
+                <%= render "folders/userfolders" %>
+            </div>
+          </ul>
+        <% end %>
+    </div>
+  </section>
+
+  <section id="links">
+    <div id="fb-root">
+    </div>
+    <div class="links-wrapper">
+      <%= yield %>
+    </div>
+  </section>
+
+  <section id="friends">
+    <div class="friends-wrapper">
+        <div class="friends-header">
+          <h5>Friends using Basket</h5>
+            <% if current_user %>
+              <button class="invite-friends-btn"><i class="fa fa-facebook"></i> Invite Friends</button>
+            <% end %>
+        </div>
+
+        <ul id="friends-list">
+          <% if current_user %>
+            <%= render "users/friends" %>
+          <% end %>
+        </ul>
+
+    </div>
+  </section>
+  </div>
+
+<script src="http://connect.facebook.net/en_US/all.js"></script>
+</body>
+</html>
