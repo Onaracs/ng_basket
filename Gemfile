@@ -39,6 +39,8 @@ gem "font-awesome-rails"
 gem "jquery-ui-rails"
 gem 'angular_rails_csrf'
 gem 'angularjs-rails', '~> 1.3.15'
+gem 'bower-rails'
+gem 'angular-rails-templates'
 
 gem "rails_12factor"
 gem "rest-client"
