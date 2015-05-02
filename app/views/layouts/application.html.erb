@@ -20,7 +20,6 @@
 
   <link href="//fonts.googleapis.com/css?family=Lato:100italic,100,300italic,300,400italic,400,700italic,700,900italic,900" rel="stylesheet" type="text/css">
   <link href='http://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
-  <link href='http://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet' type='text/css'>
 
   <!-- <link rel="stylesheet" href="/../assets/font-awesome-4.0.3/css/font-awesome.min.css"> -->
   <script src="http://connect.facebook.net/en_US/all.js"></script>
@@ -31,7 +30,7 @@
   <div class="navbar">
     <div class="navbar-inner">
       <%= image_tag 'basketblack128.png', class: "basket-img"%>
-      <h1>Basket <div class="beta">{{2+2}}beta</div></h1>
+      <h1>Basket {{40+2}}</h1>
         <% if current_user %>
           <%= render "users/usernav" %>
         <% else %>
@@ -41,7 +40,7 @@
   </div>
 
   <div class="container">
-  <section id="baskets">
+  <section id="baskets" class="col-md-4">
     <div class="baskets-wrapper">
       <br>
         <% if current_user %>
@@ -77,9 +76,7 @@
     </div>
   </section>
 
-  <div ui-view></div>
-
-  <section id="links">
+  <section id="links" class="col-md-8">
     <div id="fb-root">
     </div>
     <div class="links-wrapper">
@@ -87,7 +84,8 @@
     </div>
   </section>
 
-  </div>
+  <div class="main-view-container" ui-view></div>
+</div>
 
 <script src="http://connect.facebook.net/en_US/all.js"></script>
 </body>

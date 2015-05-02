@@ -1,6 +1,5 @@
 Rails.application.routes.draw do
 
-  get "*path" => "application#index"
   
   get 'auth/:provider/callback', to: 'sessions#create'
   get 'auth/failure', to: redirect('/')
@@ -33,4 +32,6 @@ Rails.application.routes.draw do
 
   post 'new_link', to: 'links#new_link', as: 'new_link', defaults: { format:'json'}
   post 'sent_link', to: 'shared_links#sent_link', as: 'sent_link'
+  
+  get "*path" => "application#index"
 end
