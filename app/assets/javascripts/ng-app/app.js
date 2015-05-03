@@ -3,7 +3,9 @@ angular
     'ngAnimate',
     'ui.router',
     'templates',
-    'HomeCtrl'
+    'HomeCtrl',
+    'LinkCtrl',
+    'getBaskets'
 ])
   .config(function(
     $stateProvider,
@@ -15,10 +17,15 @@ angular
     $urlRouterProvider.otherwise('/');
 
     $stateProvider
-      .state('home', {
+      .state('basket', {
         url: '/',
         templateUrl: 'home.html',
         controller: 'HomeCtrl'
+      })
+      .state('basket.links', {
+        url: '/links/:basketID',
+        templateUrl: 'links.html',
+        controller: 'LinkCtrl'
       })
 
 

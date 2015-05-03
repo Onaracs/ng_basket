@@ -43,6 +43,8 @@ class FoldersController < ApplicationController
     # render :json => { @folders }
   end
 
+
+  #*** ANGULAR ROUTE ***#
   def ng_users_folders
     user = User.find(current_user.id)
     #Add in logic here to return a string if no user is signed in!
