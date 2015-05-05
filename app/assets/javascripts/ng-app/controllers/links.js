@@ -11,7 +11,6 @@ angular.module('LinkCtrl', ['getBaskets'])
 
   getLinkstoBasket($stateParams.basketID).then(function(response) {
     
-    console.log(response);
     $scope.links = response.data;
     console.log($scope.links);
 

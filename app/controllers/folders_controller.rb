@@ -3,10 +3,10 @@ class FoldersController < ApplicationController
   before_action :set_folder, only: [:show, :destroy]
   respond_to :json, :html, :js
 
-  def show
-    @new_folder = Folder.new
-    @links = @folder.links.order('created_at DESC')
-  end
+  # def show
+  #   @new_folder = Folder.new
+  #   @links = @folder.links.order('created_at DESC')
+  # end
 
   def new
     @new_folder = Folder.new
@@ -34,14 +34,13 @@ class FoldersController < ApplicationController
     respond_with(@folder)
   end
 
-  def users_folders
-    user = User.find(current_user.id)
-    #Add in logic here to return a string if no user is signed in!
+  # def users_folders
+  #   user = User.find(current_user.id)
     
-    @folders = user.folders.order('created_at ASC')
-    render partial: "folders"
-    # render :json => { @folders }
-  end
+  #   @folders = user.folders.order('created_at ASC')
+  #   render partial: "folders"
+    
+  # end
 
 
   #*** ANGULAR ROUTE ***#

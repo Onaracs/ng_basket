@@ -30,10 +30,13 @@ gem 'omniauth'
 gem 'omniauth-facebook', '~> 1.4.1'
 gem 'figaro'
 
+#for bootstrap
 gem "therubyracer"
 gem "less-rails"
-gem "twitter-bootstrap-rails", "~> 2.2.8"
+gem "twitter-bootstrap-rails", '~> 2.2.8'
 gem "less-rails-bootstrap"
+
+
 gem "koala", "~> 1.10.0rc"
 gem "font-awesome-rails"
 gem "jquery-ui-rails"

@@ -1,42 +1,11 @@
 class SharedLinksController < ApplicationController
-  respond_to :js
   skip_before_filter  :verify_authenticity_token
+  respond_to :json, :js
 
   def destroy
     @shared_link = SharedLink.find(params[:id])
     @shared_link.destroy
     respond_with(@shared_link)
-  end
-
-  def inbox_links
-    @return_links = []
-    shared_basket = SharedBasket.find_by_user_id(current_user.id)
-
-    shared_basket.shared_links.order('created_at DESC').each do |link|
-      data = {}
-      data["title"] = link.title
-      data["message"] = link.message
-      data["url"] = link.url
-      data["sender"] = User.find(link.sender_id).name
-      data["date"] = link.created_at.strftime("%a, %b %d")
-      data["time"] = link.created_at.strftime("%l:%M%P")
-      @return_links << data
-    end
-
-    render partial: "inbox_links"
-    #For Angular
-    # shared_basket.shared_links.each do |link|
-    #   data = {}
-    #   data["title"] = link.title
-    #   data["message"] = link.message
-    #   data["sender"] = User.find(link.sender_id).name
-    #   data["date"] = link.created_at
-    #   return_links << data
-    # end
-
-    # return return_links.to_json
-
-
   end
 
   def sent_link
@@ -54,6 +23,30 @@ class SharedLinksController < ApplicationController
     # post_notification(friend_id, shared_basket)
 
     redirect_to root_url
+  end
+
+  #*** ANGULAR ROUTE ***#
+  def ng_inbox_links
+
+    @inbox_links = []
+    shared_basket = SharedBasket.find_by_user_id(current_user.id)
+
+    # shared_basket.shared_links.order('created_at DESC').each do |link|
+    shared_basket.shared_links.each do |link|
+      data = {}
+      data["title"] = link.title
+      data["message"] = link.message
+      data["url"] = link.url
+      data["sender"] = User.find(link.sender_id).name
+      data["date"] = link.created_at.strftime("%a, %b %d")
+      data["time"] = link.created_at.strftime("%l:%M%P")
+      @inbox_links << data
+    end
+
+    respond_to do |format|
+      format.json { render :json => @inbox_links }
+    end
+
   end
 
 
