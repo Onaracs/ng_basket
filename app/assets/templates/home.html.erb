@@ -1,16 +1,16 @@
 <div class="span3">
-  <h2>Test Basket Area</h2>
   <div class="basket-wrapper">
     <ul class="baskets">
     <li>
       <a ui-sref="basket.shared">Shared</a>
     </li>
-    <li ng-repeat="basket in baskets"
-        class="basket-list-item">
+    <li ng-repeat="basket in baskets">
+      <div class="basket-list-item">
       <a ui-sref="basket.links({basketID: basket.id})">
         {{basket.name}}
       </a>
       </li>
+      </div>  
     </ul>
   </div>
 </div>
