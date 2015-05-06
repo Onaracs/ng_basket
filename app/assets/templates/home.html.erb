@@ -1,18 +1,28 @@
 <div class="span3">
   <div class="basket-wrapper">
+    <!-- <h2>BASKETS</h2> -->
     <ul class="baskets">
     <li>
-      <a ui-sref="basket.shared">Shared</a>
+      <a ui-sref="basket.shared">
+        <div class="basket-list-item">
+          Shared
+        </div>
+      </a>
     </li>
     <li ng-repeat="basket in baskets">
-      <div class="basket-list-item">
       <a ui-sref="basket.links({basketID: basket.id})">
-        {{basket.name}}
+        <div class="basket-list-item">
+          {{basket.name}}
+        </div>
       </a>
-      </li>
-      </div>  
+    </li>
     </ul>
   </div>
+
+  <form ng-submit="createBasket()">
+    <input type="text">
+    <input type="Submit">
+  </form>
 </div>
 
 <div class="span8">
