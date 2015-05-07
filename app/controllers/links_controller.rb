@@ -16,37 +16,33 @@ class LinksController < ApplicationController
   end
 
   def new_link
-    # link = Link.find_by_url(params["url"])
-    # JSON.parse()???
-    p "==================="
     
-    # paramsRails = JSON.parse(params) if paramsRails.is_a?(String)
+    p "==================="
     p params
-    p params["url"]
-    p params["uniqueId"]
-    p params["uniqueId"]
-    p params["uniqueId"].to_i
-    p params["pageInfo"]
-    p params["pageInfo"]["image"]
-    p params["pageInfo"]["description"]
-    p params["pageInfo"]["title"]
-    # p params["message"]
     # p params["pageInfo"]["uniqueId"]
     p "==================="
-    # if link == nil 
-    link = Link.create(url: params["url"],
-                      title: params["pageInfo"]["title"],
+    
+    @link = Link.new(url: params["url"],
+                      title: params["title"],
                       message: params["message"],
-                      description: params["pageInfo"]["description"],
-                      image: params["pageInfo"]["image"])
-    # end
+                      description: params["description"],
+                      image: params["image"])
 
-    FolderLink.create(link_id: link.id,
-                        folder_id: params["uniqueId"].to_i)
-    # redirect_to root_url
-    respond_to do |format|
-      format.json { render :json => link }
+    if @link.save
+
+      flash.now[:success] = "Request submitted successfully."
+      FolderLink.create(link_id: @link.id,
+                          folder_id: params["uniqueId"].to_i)
+
+    else
+
+      flash.now[:error] = "There was a problem submitting your request."
+
     end
+
+    p @link
+    render :json => @link.as_json
+
   end
 
   private

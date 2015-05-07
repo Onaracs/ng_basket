@@ -10,12 +10,6 @@ class FoldersController < ApplicationController
 
   def create
 
-    p "-------------------------"
-    # binding.pry
-    p params
-    p params["name"]
-    p "-------------------------"
-
     @folder = Folder.new(name: params["name"],
                         user_id: current_user.id)
 
@@ -25,9 +19,6 @@ class FoldersController < ApplicationController
       flash.now[:error] = "There was a problem submitting your request."
     end
 
-    # respond_to do |format|
-    #   format.json { render :json => @folder }
-    # end
     render :json => @folder.as_json
 
   end
