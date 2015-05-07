@@ -8,13 +8,16 @@ class FoldersController < ApplicationController
   #   @links = @folder.links.order('created_at DESC')
   # end
 
-  def new
-    @new_folder = Folder.new
-  end
-
   def create
-    @folder = Folder.new(folder_params)
-    @folder.user_id = current_user.id
+
+    p "-------------------------"
+    # binding.pry
+    p params
+    p params["name"]
+    p "-------------------------"
+
+    @folder = Folder.new(name: params["name"],
+                        user_id: current_user.id)
 
     if @folder.save
       flash.now[:success] = "Request submitted successfully."
@@ -22,7 +25,11 @@ class FoldersController < ApplicationController
       flash.now[:error] = "There was a problem submitting your request."
     end
 
-    respond_with(@folder)
+    # respond_to do |format|
+    #   format.json { render :json => @folder }
+    # end
+    render :json => @folder.as_json
+
   end
 
   def destroy
@@ -33,15 +40,6 @@ class FoldersController < ApplicationController
 
     respond_with(@folder)
   end
-
-  # def users_folders
-  #   user = User.find(current_user.id)
-    
-  #   @folders = user.folders.order('created_at ASC')
-  #   render partial: "folders"
-    
-  # end
-
 
   #*** ANGULAR ROUTE ***#
   def ng_users_folders

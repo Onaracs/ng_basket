@@ -20,13 +20,12 @@
   </div>
 
   <form ng-submit="createBasket()">
-    <input type="text">
-    <input type="Submit">
+    <input type="text" ng-model="newBasketName">
+    <input type="Submit" value="+">New Basket
   </form>
 </div>
 
 <div class="span8">
-  <h2>Test Other Area</h2>
 
   <div ui-view></div>
 

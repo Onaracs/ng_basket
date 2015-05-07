@@ -6,13 +6,9 @@ angular.module('LinkCtrl', ['getBaskets'])
   getLinkstoBasket
 ) {
 
-  console.log('In the links controller');
-  console.log($stateParams);
-
   getLinkstoBasket($stateParams.basketID).then(function(response) {
     
     $scope.links = response.data;
-    console.log($scope.links);
 
   });
 
