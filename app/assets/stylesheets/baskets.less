@@ -31,11 +31,20 @@
   .baskets {
     margin-left: 0;
     
+    .active {
+      background: #111;
+      border-right: 5px solid #90EE90;
+
+      a {
+        color: white;
+        text-decoration: none;
+      }
+    }
+
     li {
       list-style: none;
 
       &:hover {
-        background: #111;
         border-right: 5px solid #90EE90;
       }
 
@@ -45,7 +54,6 @@
         width: 100%;
 
         &:hover {
-          color: #fff;
           text-decoration: none;  
         }
 
