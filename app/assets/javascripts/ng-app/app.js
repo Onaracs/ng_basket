@@ -19,13 +19,17 @@ angular
     $urlRouterProvider.otherwise('/');
 
     $stateProvider
+      .state('about', {
+        url: '/about',
+        templateUrl: 'about.html'
+      })
       .state('basket', {
         url: '/',
         templateUrl: 'home.html',
         controller: 'HomeCtrl'
       })
       .state('basket.links', {
-        url: 'links/:basketID',
+        url: 'links/:basketName/:basketID',
         templateUrl: 'links.html',
         controller: 'LinkCtrl'
       })
