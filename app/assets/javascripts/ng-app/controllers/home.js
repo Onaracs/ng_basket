@@ -13,13 +13,6 @@ angular.module('HomeCtrl', ['getBaskets'])
 
   });
 
-  $scope.select = function(index) {
-
-    console.log(index);
-    $scope.selected = index;
-
-  };
-
   $scope.createBasket = function() {
 
     console.log($scope.newBasketName)

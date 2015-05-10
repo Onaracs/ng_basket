@@ -24,12 +24,16 @@ class FoldersController < ApplicationController
   end
 
   def destroy
-    @folder = Folder.find(params[:id])
-    @folder.destroy
 
-    FolderLink.where(folder_id: @folder.id).delete_all
+    p params
+    folder = Folder.find(params[:id])
+    p folder
+    folder.destroy
 
-    respond_with(@folder)
+    FolderLink.where(folder_id: folder.id).delete_all
+
+    head :ok
+
   end
 
   #*** ANGULAR ROUTE ***#

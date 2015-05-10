@@ -1,5 +1,7 @@
-<h2>Basket Name</h2>
-<div>Delete Basket</div>
+<h2>{{basketName}}</h2>
+<div ng-click="deleteBasket(basketID)">
+  Delete Basket
+</div>
 <ul class="link-wrapper">
   <li ng-repeat="link in links | orderBy: '-created_at'">
     <div>
