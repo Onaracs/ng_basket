@@ -31,11 +31,11 @@ angular.module('LinkCtrl', ['getBaskets'])
       // headers: {'Content-Type': 'application/json'}
     }).success(function(response) {
       
+      $state.go('basket.shared');
+      // NEED TO REMOVE BASKET FROM LIST!
       console.log(response);
       console.log($scope.baskets);
       return $scope.baskets;
-
-      $state.go('shared');
 
     }).error(function(response) {
 
@@ -44,8 +44,6 @@ angular.module('LinkCtrl', ['getBaskets'])
     })
 
   }
-
-
 
   $scope.deleteLink = function(linkID) {
 
