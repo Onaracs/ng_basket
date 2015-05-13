@@ -3,11 +3,6 @@ class FoldersController < ApplicationController
   before_action :set_folder, only: [:show, :destroy]
   respond_to :json, :html, :js
 
-  # def show
-  #   @new_folder = Folder.new
-  #   @links = @folder.links.order('created_at DESC')
-  # end
-
   def create
 
     @folder = Folder.new(name: params["name"],
@@ -32,7 +27,14 @@ class FoldersController < ApplicationController
 
     FolderLink.where(folder_id: folder.id).delete_all
 
-    head :ok
+    user = User.find(current_user.id)
+    #Add in logic here to return a string if no user is signed in!
+    
+    @folders = user.folders.order('created_at ASC')
+    render :json => @folders
+    # respond_to do |format|
+    #   format.json { render :json => @folders }
+    # end
 
   end
 

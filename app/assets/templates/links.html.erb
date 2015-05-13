@@ -1,22 +1,24 @@
 <h2>{{basketName}}</h2>
+
 <div ng-click="deleteBasket(basketID)">
   Delete Basket
 </div>
+
 <ul class="link-wrapper">
+
   <li ng-repeat="link in links | orderBy: '-created_at'">
+
     <div>
       <i class="fa fa-trash basket-trash"
           ng-click="deleteLink(link.id)"></i>
       <a href="{{link.url}}" target="_blank" class="link">
-        <!-- {{link.created_at}}<br>
-        {{link.title}}<br>
-        {{link.message}}<br>
-        {{link.description}}<br> -->
-        <p>test time</p><br>
-        <p>test time</p><br>
-        <p>test time</p><br>
-        <p>test time</p><br>
+        <p class="date-time">{{link.created_at}}</p>
+        <p class="title">{{link.title}}</p>
+        <p class="message">{{link.message | limitTo: 15 }}{{link.message.length > 15 ? '...' : ''}}</p>
+        <!-- <p>{{link.description}}</p> -->
       </a>
     </div>
+
   </li>
+
 </ul>
