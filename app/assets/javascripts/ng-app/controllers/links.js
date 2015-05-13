@@ -23,19 +23,15 @@ angular.module('LinkCtrl', ['getBaskets'])
 
     var promise = $http({
       url: 'http://localhost:3000/folders/' + basketID,
-      // dataType: 'json',
       method: 'DELETE',
       params: {
         basketID: basketID
       }
-      // headers: {'Content-Type': 'application/json'}
     }).success(function(response) {
       
+      $scope.$parent.baskets = response;
+
       $state.go('basket.shared');
-      // NEED TO REMOVE BASKET FROM LIST!
-      console.log(response);
-      console.log($scope.baskets);
-      return $scope.baskets;
 
     }).error(function(response) {
 

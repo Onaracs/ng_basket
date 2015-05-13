@@ -9,7 +9,6 @@ angular.module('SharedLinkCtrl', [
 
   usersInbox().then(function(response) {
 
-    console.log(response);
     $scope.sharedLinks = response.data;
 
   })
