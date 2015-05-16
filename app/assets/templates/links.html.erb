@@ -4,17 +4,18 @@
   Delete Basket
 </div>
 
-<ul class="link-wrapper">
+<ul class="link-list">
 
   <li ng-repeat="link in links | orderBy: '-created_at'">
 
-    <div>
-      <i class="fa fa-trash basket-trash"
+    <div class="link-wrapper">
+      <i class="fa fa-trash link-trash"
           ng-click="deleteLink(link.id)"></i>
       <a href="{{link.url}}" target="_blank" class="link">
+        <!-- <img ng-src="{{link.image}}" alt="test"/> -->
         <p class="date-time">{{link.created_at}}</p>
         <p class="title">{{link.title}}</p>
-        <p class="description">{{link.description}}</p>
+        <!-- <p class="description">{{link.description}}</p> -->
         <p class="message">{{link.message | limitTo: 15 }}{{link.message.length > 15 ? '...' : ''}}</p>
         <!-- <p>{{link.description}}</p> -->
       </a>

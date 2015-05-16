@@ -1,19 +1,29 @@
 /* All Links
 ===========================*/
-.link-wrapper {
+.link-list {
   list-style: none;
   li {
     display: inline-block;
-    .link {
+    .link-wrapper {
       margin-right: 20px;
-      display: inline-block;
-      height: 150px;
-      width: 200px;
+      width: 400px;
       border: 1px solid black;
-    }
-  }
-
-}
+      .link-trash {
+        float: right;
+      }
+      .link {
+        display: inline-block;
+        .title {
+          font-weight: bold;
+          font-size: 20px;
+        }
+        .date-time {
+          font-size: 10px;
+        }
+      } // link
+    } // link-wrapper
+  } // li
+} // link-list
   
 
 // .links-wrapper {
