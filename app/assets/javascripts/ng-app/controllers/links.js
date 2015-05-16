@@ -19,8 +19,6 @@ angular.module('LinkCtrl', ['getBaskets'])
 
   $scope.deleteBasket = function(basketID) {
 
-    console.log(basketID);
-
     var promise = $http({
       url: 'http://localhost:3000/folders/' + basketID,
       method: 'DELETE',
@@ -41,10 +39,27 @@ angular.module('LinkCtrl', ['getBaskets'])
 
   }
 
-  $scope.deleteLink = function(linkID) {
+  $scope.deleteLink = function(basketID, linkID) {
 
     console.log(linkID);
 
-  }
+      var promise = $http({
+        url: 'http://localhost:3000/links/' + linkID,
+        method: 'DELETE',
+        params: {
+          basketID, basketID,
+          linkID: linkID
+        }
+      }).success(function(response) {
+
+        $scope.links = response;
+
+      }).error(function(response) {
+
+        return {'status': false};
+
+      })
+
+    }
 
 }])

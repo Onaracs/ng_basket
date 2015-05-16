@@ -17,11 +17,6 @@ class LinksController < ApplicationController
 
   def new_link
     
-    p "==================="
-    p params
-    # p params["pageInfo"]["uniqueId"]
-    p "==================="
-    
     @link = Link.new(url: params["url"],
                       title: params["title"],
                       message: params["message"],
@@ -41,6 +36,18 @@ class LinksController < ApplicationController
 
     p @link
     render :json => @link.as_json
+
+  end
+
+  def destroy
+
+    link = Link.find(params[:id])    
+    link.destroy
+    
+    folder = Folder.find(params[:basketID])
+    @links = folder.links
+
+    render :json => @links
 
   end
 

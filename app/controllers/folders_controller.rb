@@ -20,9 +20,7 @@ class FoldersController < ApplicationController
 
   def destroy
 
-    p params
-    folder = Folder.find(params[:id])
-    p folder
+    folder = Folder.find(params[:id])    
     folder.destroy
 
     Link.where(folder_id: folder.id).delete_all
@@ -32,9 +30,6 @@ class FoldersController < ApplicationController
     
     @folders = user.folders.order('created_at ASC')
     render :json => @folders
-    # respond_to do |format|
-    #   format.json { render :json => @folders }
-    # end
 
   end
 

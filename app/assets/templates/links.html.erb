@@ -1,6 +1,7 @@
 <h2>{{basketName}}</h2>
 
-<div ng-click="deleteBasket(basketID)">
+
+<div class="delete-basket-check" ng-click="deleteBasket(basketID)">
   Delete Basket
 </div>
 
@@ -10,7 +11,7 @@
 
     <div class="link-wrapper">
       <i class="fa fa-trash link-trash"
-          ng-click="deleteLink(link.id)"></i>
+          ng-click="deleteLink(link.folder_id, link.id)"></i>
       <a href="{{link.url}}" target="_blank" class="link">
         <!-- <img ng-src="{{link.image}}" alt="test"/> -->
         <p class="date-time">{{link.created_at}}</p>
