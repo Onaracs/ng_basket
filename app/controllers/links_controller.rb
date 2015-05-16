@@ -26,13 +26,12 @@ class LinksController < ApplicationController
                       title: params["title"],
                       message: params["message"],
                       description: params["description"],
-                      image: params["image"])
+                      image: params["image"],
+                      folder_id: params["uniqueId"].to_i)
 
     if @link.save
 
       flash.now[:success] = "Request submitted successfully."
-      FolderLink.create(link_id: @link.id,
-                          folder_id: params["uniqueId"].to_i)
 
     else
 

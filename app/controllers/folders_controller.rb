@@ -25,7 +25,7 @@ class FoldersController < ApplicationController
     p folder
     folder.destroy
 
-    FolderLink.where(folder_id: folder.id).delete_all
+    Link.where(folder_id: folder.id).delete_all
 
     user = User.find(current_user.id)
     #Add in logic here to return a string if no user is signed in!
