@@ -26,7 +26,7 @@ class LinksController < ApplicationController
                       title: params["title"],
                       message: params["message"],
                       description: params["description"],
-                      image: params["image"]
+                      image: params["image"],
                       folder_id: params["uniqueId"].to_i)
 
     if @link.save

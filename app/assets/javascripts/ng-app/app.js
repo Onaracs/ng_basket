@@ -16,7 +16,7 @@ angular
     $httpProvider) {
 
 
-    $urlRouterProvider.otherwise('basket.shared');
+    $urlRouterProvider.otherwise('shared');
 
     $stateProvider
       .state('about', {

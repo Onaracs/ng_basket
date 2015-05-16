@@ -16,13 +16,6 @@ ActiveRecord::Schema.define(version: 20140921150609) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "folder_links", force: true do |t|
-    t.integer  "folder_id"
-    t.integer  "link_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
   create_table "folders", force: true do |t|
     t.string   "name"
     t.integer  "user_id"
@@ -33,6 +26,7 @@ ActiveRecord::Schema.define(version: 20140921150609) do
   create_table "links", force: true do |t|
     t.string   "url"
     t.string   "title"
+    t.integer  "folder_id"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "description"
