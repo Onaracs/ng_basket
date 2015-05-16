@@ -3,6 +3,5 @@ class Folder < ActiveRecord::Base
 
   belongs_to :user
 
-  has_many :folder_links
-  has_many :links, through: :folder_links
+  has_many :links
 end
