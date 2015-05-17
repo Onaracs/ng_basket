@@ -40,31 +40,38 @@
         <a class="brand" ui-sref="basket.shared">Basket</a>
         <div class="nav-collapse">
           <ul class="nav navbar-nav">
-            <% if current_user %>
-              <li>
-                <!-- <img alt="FB_Pic" src=<%= current_user.image %>> -->
-                <a href="">
-                  <%= current_user.name %>
-                </a>
-              </li>
-            <% end %>
+
             <li>
               <a ui-sref="about">About</a>
             </li>
+
             <li>
               <a href="#" class='download-extension-btn'>
                 <%#= image_tag 'chrome2.png', class: "chrome-img" %>
                 Extension
               </a>
             </li>
-            <li>
-              <%= link_to "/auth/facebook", id: "sign_in" do %>
-                <i class = "fa fa-facebook-square icon facebook"></i> Login
-              <% end %>
-            </li>
-            <li>
-              <%= link_to "Sign out", signout_path, id: "sign_out" %>
-            </li>
+
+            <% if current_user == nil %>
+              <li>
+                <%= link_to "/auth/facebook", id: "sign_in" do %>
+                  <i class = "fa fa-facebook-square icon facebook"></i> Login
+                <% end %>
+              </li>
+            <% end %>
+
+            <% if current_user %>
+              <li>
+                <!-- <img alt="FB_Pic" src=<%#= current_user.image %>> -->
+                <a href="">
+                  <%= current_user.name %>
+                </a>
+              </li>
+              <li>
+                <%= link_to "Sign out", signout_path, id: "sign_out" %>
+              </li>
+
+            <% end %>
           </ul>
         </div> <!-- navbar-collapse -->
       </div> <!-- container -->

@@ -23,6 +23,7 @@ Rails.application.routes.draw do
   get 'users_folders', to: 'folders#users_folders', as: 'users_folders'
   get 'users_friends', to: 'users#users_friends', as: 'users_friends'
   get 'users_inbox_links', to: 'shared_links#inbox_links', as: 'inbox_links'
+  get 'ng_current_user', to: 'users#ng_current_user', as: 'ng_current_user', defaults: { format:'json' }
 
   # ANGULAR EXTENSION
   get 'ng_users_folders', to: 'folders#ng_users_folders', as: 'ng_users_folders', defaults: { format:'json' }
