@@ -25,7 +25,7 @@ angular
       })
       .state('basket', {
         url: '/',
-        templateUrl: 'home.html',
+        templateUrl: 'baskets.html',
         controller: 'HomeCtrl'
       })
       .state('basket.links', {

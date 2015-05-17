@@ -15,10 +15,6 @@ angular.module('HomeCtrl', ['getBaskets'])
 
   $scope.createBasket = function() {
 
-    console.log($scope.newBasketName)
-
-    console.log('this is creating a new basket');
-    // get input type
     var promise = $http({
       url: 'http://localhost:3000/folders',
       dataType: 'json',

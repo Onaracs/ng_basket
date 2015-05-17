@@ -9,20 +9,31 @@ class SharedLinksController < ApplicationController
   end
 
   def sent_link
-    friend_id = params["uniqueId"].to_i
-    shared_basket = SharedBasket.find(friend_id)
 
-    #include the new info being sent in from the extension
-    shared_basket.shared_links.create(sender_id: current_user.id,
+    friend = User.find_by_uid(params["uniqueId"])
+    shared_basket = SharedBasket.find_by_user_id(friend.id)
+
+    @shared_link = SharedLink.new(sender_id: current_user.id,
+                                    shared_basket_id: friend.id,
                                       url: params["url"],
                                       message: params["message"],
-                                      title: params["pageInfo"]["title"],
-                                      description: params["pageInfo"]["description"],
-                                      image: params["pageInfo"]["image"])
+                                      title: params["title"],
+                                      description: params["description"],
+                                      image: params["image"])
 
-    # post_notification(friend_id, shared_basket)
+    if @shared_link.save
 
-    redirect_to root_url
+      flash.now[:success] = "Request submitted successfully."
+
+    else
+
+      flash.now[:error] = "There was a problem submitting your request."
+
+    end
+
+    p @shared_link
+    render :json => @shared_link.as_json
+
   end
 
   #*** ANGULAR ROUTE ***#
