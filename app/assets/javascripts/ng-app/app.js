@@ -38,6 +38,11 @@ angular
         templateUrl: 'shared_links.html',
         controller: 'SharedLinkCtrl'
       })
+      .state('friends', {
+        url: '/',
+        templateUrl: 'friends.html',
+        controller: 'FriendCtrl'
+      })
 
     // enable HTML5 mode for SEO
     // $locationProvider.html5Mode(true);
