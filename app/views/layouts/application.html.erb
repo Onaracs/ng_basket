@@ -41,12 +41,13 @@
         <div class="nav-collapse">
           <ul class="nav navbar-nav">
 
-            <li>
+<!--             <li>
               <a ui-sref="about">About</a>
-            </li>
+            </li> -->
 
             <li>
-              <a href="#" class='download-extension-btn'>
+              <a class='download-extension-btn'
+                ng-click="chromeExtensionInstall()">
                 <%#= image_tag 'chrome2.png', class: "chrome-img" %>
                 Extension
               </a>

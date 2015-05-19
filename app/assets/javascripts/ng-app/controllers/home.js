@@ -6,6 +6,11 @@ angular.module('HomeCtrl', ['getBaskets'])
   getUsersBaskets
 ) {
 
+  $scope.chromeExtensionInstall = function() {
+    console.log('install extension')
+    // chrome.webstore.install()
+  }
+
   // Make call to Rails API to get a list of the users baskets
   getUsersBaskets().then(function(result) {
 
