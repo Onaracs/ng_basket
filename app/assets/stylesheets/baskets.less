@@ -73,24 +73,27 @@
         } // basket-list-item
       } // a
     } // li
-    .create-basket {
-      font-size: 16px;
-      padding: 10px 0 10px 25px;
-      p {
-        color: #999;
-        span {
-          margin-right: 5px;
-          border: 1px solid #999;
-          padding: 1px 6px;
-          border-radius: 20px;
-        }
-        &:hover {
-         color: #fff;
-        }
+  } // baskets
+  .create-basket {
+    cursor: pointer;
+    position: absolute;
+    bottom: 0;
+    font-size: 16px;
+    padding: 10px 0 10px 25px;
+    p {
+      color: #999;
+      span {
+        margin-right: 5px;
+        border: 1px solid #999;
+        padding: 1px 6px;
+        border-radius: 20px;
       }
-      input[type="text"] {
-        width: 130px;
+      &:hover {
+       color: #fff;
       }
     }
-  } // baskets
+    input[type="text"] {
+      width: 130px;
+    }
+  } // create-basket
 }
