@@ -31,6 +31,8 @@ angular.module('HomeCtrl', ['getBaskets'])
     }).success(function(response) {
       
       $scope.baskets.push(response);
+      console.log($scope.showForm);
+      $scope.showForm = false;
       return $scope.baskets;
 
     }).error(function(response) {
