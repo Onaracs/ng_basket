@@ -6,6 +6,7 @@ angular
     'HomeCtrl',
     'LinkCtrl',
     'SharedLinkCtrl',
+    'FriendCtrl',
     'getBaskets',
     'getLinks'
 ])
@@ -39,7 +40,7 @@ angular
         controller: 'SharedLinkCtrl'
       })
       .state('friends', {
-        url: '/',
+        url: '/friends',
         templateUrl: 'friends.html',
         controller: 'FriendCtrl'
       })
