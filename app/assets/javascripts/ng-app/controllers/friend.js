@@ -28,8 +28,9 @@ angular.module('FriendCtrl', [
 
   }
 
-  $scope.getLinkstoBasket = function(basketID) {
+  $scope.getLinkstoBasket = function(basketName, basketID) {
 
+    $scope.basketName = basketName;
     
     getLinkstoBasket(basketID).then(function(response) {
       

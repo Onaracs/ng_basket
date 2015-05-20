@@ -44,6 +44,16 @@
 <!--             <li>
               <a ui-sref="about">About</a>
             </li> -->
+
+            <% if current_user %>
+              <li>
+                <!-- <img alt="FB_Pic" src=<%#= current_user.image %>> -->
+                <a ui-sref="basket">
+                  <%= current_user.name %>
+                </a>
+              </li>
+            <% end %>
+
             <li>
               <a ui-sref="friends">Friends</a>
             </li>
@@ -62,15 +72,9 @@
                   <i class = "fa fa-facebook-square icon facebook"></i> Login
                 <% end %>
               </li>
-            <% end %>
 
-            <% if current_user %>
-              <li>
-                <!-- <img alt="FB_Pic" src=<%#= current_user.image %>> -->
-                <a href="">
-                  <%= current_user.name %>
-                </a>
-              </li>
+            <% else %>
+            
               <li>
                 <%= link_to "Sign out", signout_path, id: "sign_out" %>
               </li>

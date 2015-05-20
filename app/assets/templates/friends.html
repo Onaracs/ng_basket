@@ -25,7 +25,7 @@
 
 </div> <!-- span3 -->
 
-<div class="span3">
+<div class="span3 friends-baskets">
 
   <div class="basket-wrapper">
     <!-- <h2>BASKETS</h2> -->
@@ -34,7 +34,7 @@
       <li ng-repeat="basket in friendBaskets | orderBy: 'name'"
           ui-sref-active="active">
 
-        <a ng-click="getLinkstoBasket(basket.id)">
+        <a ng-click="getLinkstoBasket(basket.name, basket.id)">
 
           <div class="basket-list-item">
 
@@ -53,6 +53,7 @@
 </div> <!-- span3 -->
 
 <div class="span6">
+  <h2>{{basketName}}</h2>
 
   <ul class="link-list">
 
