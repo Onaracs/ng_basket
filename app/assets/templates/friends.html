@@ -1,1 +1,31 @@
-This is the friends page!
+<div class="span3">
+  <!-- <div class="button-wrapper">
+    <div class="button">Baskets</div>
+    <div class="button">Friends</div>
+  </div> -->
+  <div class="friend-wrapper">
+    <!-- <h2>BASKETS</h2> -->
+    <ul class="friends">
+
+      <li ng-repeat="friend in friends | orderBy: 'name'"
+          ui-sref-active="active">
+        <a ui-sref="friend.links({basketName: basket.name,
+                                  basketID: basket.id})">
+          <div class="friend-list-item">
+            {{friend.name}}
+          </div>
+        </a>
+      </li>
+
+
+    </ul> <!-- baskets -->
+
+  </div> <!-- basket-wrapper -->
+
+</div>
+
+<div class="span9">
+
+  <div ui-view></div>
+
+</div>
