@@ -35,6 +35,7 @@ class FoldersController < ApplicationController
 
   #*** ANGULAR ROUTE ***#
   def ng_users_folders
+
     user = User.find(current_user.id)
     #Add in logic here to return a string if no user is signed in!
     
@@ -44,6 +45,20 @@ class FoldersController < ApplicationController
       format.json { render :json => @folders }
     end
     
+  end
+
+  def ng_friends_baskets
+
+    user = User.find_by_uid(params["friendID"])
+    @folders = user.folders
+    p "================"
+    p "================"
+    p params
+    p @folders
+    p "================"
+    p "================"
+    render :json => @folders
+
   end
 
   private

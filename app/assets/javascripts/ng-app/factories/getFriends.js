@@ -22,3 +22,29 @@ angular.module('getFriends', [])
   }
 
 }])
+
+.factory('getFriendsBaskets',  ['$http', function($http) {
+
+  return function(friendID) {
+    var url = 'http://localhost:3000/ng_friends_baskets'
+
+    var promise = $http({
+      url: url,
+      params: {friendID: friendID},
+      method: 'GET'
+    }).success(function(response) {
+
+      console.log(response);
+      return response;
+
+    }).error(function(response) {
+
+      return {'status':false};
+
+    })
+
+    return promise;
+  }
+
+
+}]);

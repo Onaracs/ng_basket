@@ -9,8 +9,7 @@
 
       <li ng-repeat="friend in friends | orderBy: 'name'"
           ui-sref-active="active">
-        <a ui-sref="friend.links({basketName: basket.name,
-                                  basketID: basket.id})">
+        <a ng-click="getFriendsBaskets(friend.id)">
           <div class="friend-list-item">
             {{friend.name}}
           </div>
@@ -24,8 +23,10 @@
 
 </div>
 
-<div class="span9">
+<div class="span3">
 
-  <div ui-view></div>
+  <div>
+    {{friendID}}
+  </div>
 
 </div>
