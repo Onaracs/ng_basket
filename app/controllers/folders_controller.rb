@@ -50,13 +50,9 @@ class FoldersController < ApplicationController
   def ng_friends_baskets
 
     user = User.find_by_uid(params["friendID"])
+
     @folders = user.folders
-    p "================"
-    p "================"
-    p params
-    p @folders
-    p "================"
-    p "================"
+
     render :json => @folders
 
   end
