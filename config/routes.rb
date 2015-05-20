@@ -29,6 +29,8 @@ Rails.application.routes.draw do
   get 'ng_users_folders', to: 'folders#ng_users_folders', as: 'ng_users_folders', defaults: { format:'json' }
 
   get 'ng_users_friends', to: 'users#ng_users_friends', as: 'ng_users_friends', defaults: { format:'json' }
+  
+  get 'ng_friends_baskets', to: 'folders#ng_friends_baskets', as: 'ng_friends_baskets', defaults: { format:'json' }
 
   get 'ng_basket_links', to: 'links#ng_basket_links', as: 'ng_basket_links', defaults: { format:'json' }
   
