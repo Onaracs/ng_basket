@@ -25,17 +25,10 @@ class LinksController < ApplicationController
                       folder_id: params["uniqueId"].to_i)
 
     if @link.save
-
-      flash.now[:success] = "Request submitted successfully."
-
-    else
-
-      flash.now[:error] = "There was a problem submitting your request."
-
+      folder = Folder.find(params["uniqueId"].to_i)
+      @links = folder.links
+      render :json => @links
     end
-
-    p @link
-    render :json => @link.as_json
 
   end
 
