@@ -8,7 +8,8 @@ angular
     'SharedLinkCtrl',
     'FriendCtrl',
     'getBaskets',
-    'getLinks'
+    'getLinks',
+    'NavBar'
 ])
   .config(function(
     $stateProvider,
