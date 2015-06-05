@@ -1,4 +1,7 @@
-angular.module('HomeCtrl', ['getBaskets'])
+angular.module('HomeCtrl', [
+  'getBaskets', 
+  'new.BasketButtonDirective'
+])
 
 .controller('HomeCtrl', ['$scope', '$http', 'getUsersBaskets', function(
   $scope,
