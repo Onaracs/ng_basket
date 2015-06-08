@@ -1,9 +1,9 @@
-angular.module('HomeCtrl', [
+angular.module('BasketCtrl', [
   'getBaskets', 
   'new.BasketButtonDirective'
 ])
 
-.controller('HomeCtrl', ['$scope', '$http', 'getUsersBaskets', function(
+.controller('BasketCtrl', ['$scope', '$http', 'getUsersBaskets', function(
   $scope,
   $http,
   getUsersBaskets
@@ -21,6 +21,7 @@ angular.module('HomeCtrl', [
 
   });
 
+  // move this logic to the basket-button-directive
   $scope.createBasket = function() {
 
     var promise = $http({

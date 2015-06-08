@@ -3,12 +3,10 @@ angular
     'ngAnimate',
     'ui.router',
     'templates',
-    'HomeCtrl',
+    'BasketCtrl',
     'LinkCtrl',
     'SharedLinkCtrl',
     'FriendCtrl',
-    'getBaskets',
-    'getLinks',
     'NavBar'
 ])
   .config(function(
@@ -28,7 +26,7 @@ angular
       .state('basket', {
         url: '/',
         templateUrl: 'baskets.html',
-        controller: 'HomeCtrl'
+        controller: 'BasketCtrl'
       })
       .state('basket.links', {
         url: 'links/:basketName/:basketID',

@@ -8,6 +8,8 @@ angular.module('LinkCtrl', ['getBaskets'])
   getLinkstoBasket
 ) {
 
+  $scope.deleteBasket = false;
+
   $scope.basketName = $stateParams.basketName;
   $scope.basketID = $stateParams.basketID;
 
