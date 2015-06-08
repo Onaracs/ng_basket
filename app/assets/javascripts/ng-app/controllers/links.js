@@ -1,4 +1,7 @@
-angular.module('LinkCtrl', ['getBaskets'])
+angular.module('LinkCtrl', [
+  'getBaskets',
+  'popupDeleteModal'
+])
 
 .controller('LinkCtrl', ['$stateParams', '$scope', '$http', '$state', 'getLinkstoBasket', function(
   $stateParams,

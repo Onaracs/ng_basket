@@ -1,4 +1,4 @@
-angular.module('new.BasketButtonDirective', [])
+angular.module('newBasketButtonDirective', [])
   .directive('newBasketButton', [function() {
 
     return {

@@ -1,9 +1,14 @@
 <h2 class="basket-name">{{basketName}}</h2>
 
-<popup-delete-modal></popup-delete-modal>
+<div ng-class="{'show-modal': deleteBasket === true}">
+  <popup-delete-modal
+        delete-basket="deleteBasket"
+        basket-id="basketID"
+  ></popup-delete-modal>
+</div>
 
 <div class="delete-basket-check" 
-      ng-click="deleteBasket != deleteBasket">
+      ng-click="deleteBasket = !deleteBasket">
       <!-- ng-click="deleteBasket(basketID)"> -->
   Delete Basket
 </div>

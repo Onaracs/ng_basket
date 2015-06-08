@@ -1,6 +1,6 @@
 angular.module('BasketCtrl', [
   'getBaskets', 
-  'new.BasketButtonDirective'
+  'newBasketButtonDirective'
 ])
 
 .controller('BasketCtrl', ['$scope', '$http', 'getUsersBaskets', function(
