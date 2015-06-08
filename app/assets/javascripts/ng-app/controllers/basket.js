@@ -35,7 +35,7 @@ angular.module('BasketCtrl', [
     }).success(function(response) {
       
       $scope.baskets.push(response);
-      console.log($scope.showForm);
+      
       $scope.showForm = false;
       return $scope.baskets;
 

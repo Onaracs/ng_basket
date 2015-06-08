@@ -16,9 +16,6 @@ angular.module('popupDeleteModal', [])
       link: function( scope, $ele, $attrs ) {
 
         scope.delete = function(basketID) {
-          console.log('clicking the delete button');
-          console.log(basketID);
-          console.log(scope);
 
           var promise = $http({
             url: 'http://localhost:3000/folders/' + basketID,
