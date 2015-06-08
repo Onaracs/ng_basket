@@ -11,7 +11,8 @@ angular.module('LinkCtrl', [
   getLinkstoBasket
 ) {
 
-  $scope.deleteBasket = false;
+  console.log($scope);
+  $scope.showDeleteBasketModal = false;
 
   $scope.basketName = $stateParams.basketName;
   $scope.basketID = $stateParams.basketID;
@@ -21,28 +22,6 @@ angular.module('LinkCtrl', [
     $scope.links = response.data;
 
   });
-
-  $scope.deleteBasket = function(basketID) {
-
-    var promise = $http({
-      url: 'http://localhost:3000/folders/' + basketID,
-      method: 'DELETE',
-      params: {
-        basketID: basketID
-      }
-    }).success(function(response) {
-      
-      $scope.$parent.baskets = response;
-
-      $state.go('basket.shared');
-
-    }).error(function(response) {
-
-      return {'status': false};
-
-    })
-
-  }
 
   $scope.deleteLink = function(basketID, linkID) {
 
