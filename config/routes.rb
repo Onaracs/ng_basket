@@ -18,7 +18,7 @@ Rails.application.routes.draw do
 
   root "public#new_about"
 
-  #Extension Routes
+  # Extension Routes
   #============================
   get 'users_folders', to: 'folders#users_folders', as: 'users_folders'
   get 'users_friends', to: 'users#users_friends', as: 'users_friends'

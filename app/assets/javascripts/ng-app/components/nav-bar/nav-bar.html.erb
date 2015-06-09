@@ -34,16 +34,14 @@
             </li>
 
             
-            <li ng-hide="user">
-              <%#= link_to "/auth/facebook", id: "sign_in" do %>
-                <!-- <i class="fa fa-facebook-square icon facebook"></i> Login -->
-                Login
-              <%# end %>
+            <li ng-show="!user">
+              <a href="/auth/facebook">
+                <i class="fa fa-facebook-square icon facebook"></i>Login
+              </a>
             </li>
             
             <li ng-show="user">
-              <%#= link_to "Sign out", signout_path, id: "sign_out" %>
-              <a ui-sref="signout">Sign Out</a>
+              <a href="/signout">Signout</a>
             </li>
 
           </ul>
