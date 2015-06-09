@@ -13,15 +13,15 @@
 <!--             <li>
               <a ui-sref="about">About</a>
             </li> -->
-
+            
             <li ng-show="user">
               <!-- <img alt="FB_Pic" src=<%#= current_user.image %>> -->
               <a ui-sref="basket">
-                {{user.name}}
+                My Baskets
               </a>
             </li>
 
-            <li>
+            <li ng-show="user">
               <a ui-sref="friends">Friends</a>
             </li>
 

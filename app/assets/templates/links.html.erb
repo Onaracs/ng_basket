@@ -1,12 +1,14 @@
 <h2 class="basket-name">{{basketName}}</h2>
 
-<div ng-class="{'show-modal': showDeleteBasketModal === false}">
-  <popup-delete-modal
+<div ng-class="{'hide-modal': showDeleteBasketModal === false}">
+
+  <popup-delete-basket-modal
         delete-basket="showDeleteBasketModal"
         basket-name="basketName"
         basket-id="basketID"
         baskets="$parent.baskets"
-  ></popup-delete-modal>
+  ></popup-delete-basket-modal>
+
 </div>
 
 <div class="delete-basket-check" 
@@ -19,8 +21,10 @@
   <li ng-repeat="link in links | orderBy: '-created_at'">
 
     <div class="link-wrapper">
-      <i class="fa fa-trash link-trash"
-          ng-click="deleteLink(link.folder_id, link.id)"></i>
+      <!-- <i class="fa fa-trash link-trash"
+          ng-click="deleteLink(link.folder_id, link.id)"></i> -->
+      <!-- <i class="fa fa-trash link-trash"
+          ng-click="showDeleteLinkModal = !showDeleteLinkModal"></i> -->
       <a href="{{link.url}}" target="_blank" class="link">
         <!-- <img ng-src="{{link.image}}" alt="test"/> -->
         <p class="date-time">{{link.created_at}}</p>
