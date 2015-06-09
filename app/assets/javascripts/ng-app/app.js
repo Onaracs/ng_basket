@@ -7,14 +7,19 @@ angular
     'LinkCtrl',
     'SharedLinkCtrl',
     'FriendCtrl',
-    'NavBar'
+    'NavBar',
+    'currentUser'
 ])
   .config(function(
     $stateProvider,
     $urlRouterProvider,
     // $locationProvider,
-    $httpProvider) {
+    $httpProvider
+) {
 
+    // getCurrentUser().then(function(result) {
+    //   console.log(result);
+    // })
 
     $urlRouterProvider.otherwise('shared');
 

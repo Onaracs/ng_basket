@@ -14,14 +14,12 @@
               <a ui-sref="about">About</a>
             </li> -->
 
-            <% if current_user %>
-              <li>
-                <!-- <img alt="FB_Pic" src=<%#= current_user.image %>> -->
-                <a ui-sref="basket">
-                  <%= current_user.name %>
-                </a>
-              </li>
-            <% end %>
+            <li ng-show="user">
+              <!-- <img alt="FB_Pic" src=<%#= current_user.image %>> -->
+              <a ui-sref="basket">
+                {{scope.name}}
+              </a>
+            </li>
 
             <li>
               <a ui-sref="friends">Friends</a>
@@ -35,20 +33,15 @@
               </a>
             </li>
 
-            <% if current_user == nil %>
-              <li>
-                <%= link_to "/auth/facebook", id: "sign_in" do %>
-                  <i class="fa fa-facebook-square icon facebook"></i> Login
-                <% end %>
-              </li>
-
-            <% else %>
             
-              <li>
-                <%= link_to "Sign out", signout_path, id: "sign_out" %>
-              </li>
+            <li ng-hide="user">
 
-            <% end %>
+            </li>
+            
+            <li ng-show="user">
+              <%= link_to "Sign out", signout_path, id: "sign_out" %>
+            </li>
+
           </ul>
         </div> <!-- navbar-collapse -->
       </div> <!-- container -->
