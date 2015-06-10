@@ -23,8 +23,21 @@
     <div class="link-wrapper">
       <!-- <i class="fa fa-trash link-trash"
           ng-click="deleteLink(link.folder_id, link.id)"></i> -->
-      <!-- <i class="fa fa-trash link-trash"
-          ng-click="showDeleteLinkModal = !showDeleteLinkModal"></i> -->
+      <i class="fa fa-trash link-trash"
+          ng-click="showDeleteLinkModal = !showDeleteLinkModal"></i>
+
+      <div ng-class="{'hide-modal': showDeleteLinkModal === false}">
+
+        <popup-delete-link-modal
+              show-delete-link="showDeleteLinkModal"
+              link-id="link.id"
+              basket-id="link.folder_id"
+              link-title="link.title"
+              links="$parent.links"
+        ></popup-delete-link-modal>
+
+      </div>
+
       <a href="{{link.url}}" target="_blank" class="link">
         <!-- <img ng-src="{{link.image}}" alt="test"/> -->
         <p class="date-time">{{link.created_at}}</p>
