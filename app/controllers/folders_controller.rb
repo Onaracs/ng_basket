@@ -28,7 +28,7 @@ class FoldersController < ApplicationController
     user = User.find(current_user.id)
     #Add in logic here to return a string if no user is signed in!
     
-    @folders = user.folders.order('created_at ASC')
+    @folders = user.folders
     render :json => @folders
 
   end
@@ -39,7 +39,7 @@ class FoldersController < ApplicationController
     user = User.find(current_user.id)
     #Add in logic here to return a string if no user is signed in!
     
-    @folders = user.folders.order('created_at ASC')
+    @folders = user.folders
     
     respond_to do |format|
       format.json { render :json => @folders }
