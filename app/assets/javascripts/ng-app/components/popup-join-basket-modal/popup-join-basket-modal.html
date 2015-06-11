@@ -1,0 +1,43 @@
+<div class="modal">
+
+  <div class="modal-dialog">
+
+    <div class="modal-content">
+
+      <div class="modal-header">
+
+        <h4 class="modal-title">
+          <!-- Join {{linkTitle}}? -->
+          Join 'Foo Bar'
+          Owner: 'Hello'
+        </h4>
+
+      </div>
+
+      <div class="modal-body">
+        <p>By joining you will be able to:</p>
+        <ul>
+          <li>Save links to this basket</li>
+          <li>Collaborate....</li>
+        </ul>
+      </div>
+
+      <div class="modal-footer">
+
+        <button type="button" 
+                class="btn btn-default" 
+                ng-click="showDeleteLink = !showDeleteLink">Cancel
+        </button>
+
+        <button type="button" 
+                class="btn btn-primary" 
+                ng-click="joinBasket()">Join
+        </button>
+
+      </div>
+
+    </div> <!-- modal-content -->
+
+  </div> <!-- modal-dialog -->
+
+</div> <!-- modal -->

@@ -16,6 +16,11 @@ angular.module('NavBar', ['currentUser'])
 
       })
 
+      scope.chromeExtensionInstall = function() {
+        console.log('install extension')
+        // chrome.webstore.install()
+      }
+
     }
   }
 
