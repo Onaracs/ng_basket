@@ -14,6 +14,7 @@ Rails.application.routes.draw do
   resources :links, only: [:destroy]
   resources :folder_links, only: [:destroy]
   resources :shared_baskets, only: [:show, :create]
+  resources :shared_baskets, only: [:create, :destroy]
   resources :shared_links
 
   root "public#new_about"
