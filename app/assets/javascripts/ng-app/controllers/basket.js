@@ -1,16 +1,21 @@
 angular.module('BasketCtrl', [
   'getBaskets', 
-  'newBasketButtonDirective'
+  'newBasketButtonDirective',
+  'currentUser'
 ])
 
-.controller('BasketCtrl', ['$rootScope', '$scope', '$http', 'getUsersBaskets', function(
-  $rootScope,
+.controller('BasketCtrl', ['$scope', '$http', 'getUsersBaskets', 'getCurrentUser', function(
   $scope,
   $http,
-  getUsersBaskets
+  getUsersBaskets,
+  getCurrentUser
 ) {
 
-  // $scope.user = $rootScope.user;
+  getCurrentUser().then(function(response) {
+
+    $scope.user = response.data;
+
+  })
   
   // Make call to Rails API to get a list of the users baskets
   getUsersBaskets().then(function(result) {
