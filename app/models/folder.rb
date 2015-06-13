@@ -5,5 +5,7 @@ class Folder < ActiveRecord::Base
 
   has_many :links
   has_many :join_baskets
+
+  attr_accessor :owner
   
 end

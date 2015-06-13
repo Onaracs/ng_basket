@@ -37,25 +37,25 @@ class FoldersController < ApplicationController
   def ng_users_folders
 
     user = User.find(current_user.id)
-    #Add in logic here to return a string if no user is signed in!
     
-    @folders = user.folders
-    @joined_folders = user.join_baskets
+    folders = user.folders
+    joined_folders = user.join_baskets
 
-    p "===================="
-    p @joined_folders
-    if @joined_folders
+    @all_folders = []
 
-      @joined_folders.each do |folder|
+    @all_folders << folders
+
+    if joined_folders
+
+      joined_folders.each do |folder|
         folder = Folder.find(folder.folder_id)
-        @folders << folder
+        @all_folders << folder
       end
 
     end
-    p "===================="
     
     respond_to do |format|
-      format.json { render :json => @folders }
+      format.json { render :json => @all_folders.flatten! }
     end
     
   end
