@@ -16,7 +16,7 @@ class LinksController < ApplicationController
   end
 
   def new_link
-    
+
     @link = Link.new(url: params["url"],
                       title: params["title"],
                       message: params["message"],

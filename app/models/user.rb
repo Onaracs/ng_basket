@@ -1,5 +1,6 @@
 class User < ActiveRecord::Base
   has_many :folders
+  has_many :join_baskets
   has_one :shared_basket
 
   def self.from_omniauth(auth)

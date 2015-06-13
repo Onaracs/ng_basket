@@ -5,10 +5,14 @@
   li {
     display: block;
     .link-wrapper {
+      position: relative;
       margin: 0 20px 20px 0;
       border: 1px solid black;
       .link-trash {
-        float: right;
+        position: absolute;
+        right: 0;
+        font-size: 20px;
+        cursor: pointer;
       }
       .link {
         display: inline-block;
@@ -20,6 +24,9 @@
           font-size: 10px;
         }
       } // link
+      a {
+        width: 100%;
+      }
     } // link-wrapper
   } // li
 } // link-list

@@ -7,6 +7,8 @@ angular
     'LinkCtrl',
     'SharedLinkCtrl',
     'FriendCtrl',
+    'FriendBasketCtrl',
+    'FriendBasketLinkCtrl',
     'NavBar',
     'currentUser'
 ])
@@ -47,6 +49,16 @@ angular
         url: '/friends',
         templateUrl: 'friends.html',
         controller: 'FriendCtrl'
+      })
+      .state('friends.baskets', {
+        url: '/baskets/:friendID',
+        templateUrl: 'friends-baskets.html',
+        controller: 'FriendBasketCtrl'
+      })
+      .state('friends.baskets.links', {
+        url: '/links/:basketName/:basketID',
+        templateUrl: 'friends-baskets-links.html',
+        controller: 'FriendBasketLinkCtrl'
       })
 
     // enable HTML5 mode for SEO

@@ -4,4 +4,8 @@ class Folder < ActiveRecord::Base
   belongs_to :user
 
   has_many :links
+  has_many :join_baskets
+
+  attr_accessor :owner
+  
 end

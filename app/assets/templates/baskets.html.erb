@@ -3,7 +3,6 @@
   <div class="basket-wrapper">
 
     <h2 class="wrapper-header">Baskets</h2>
-    
     <ul class="baskets">
 
       <li>
@@ -30,6 +29,9 @@
                                   basketID: basket.id})">
           <div class="basket-list-item">
             {{basket.name}}
+            <p ng-if="user.id != basket.user_id">
+              (Shared)
+            </p>
           </div>
         </a>
       </li>
