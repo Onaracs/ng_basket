@@ -40,6 +40,19 @@ class FoldersController < ApplicationController
     #Add in logic here to return a string if no user is signed in!
     
     @folders = user.folders
+    @joined_folders = user.join_baskets
+
+    p "===================="
+    p @joined_folders
+    if @joined_folders
+
+      @joined_folders.each do |folder|
+        folder = Folder.find(folder.folder_id)
+        @folders << folder
+      end
+
+    end
+    p "===================="
     
     respond_to do |format|
       format.json { render :json => @folders }
