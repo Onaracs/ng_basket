@@ -1,6 +1,5 @@
 <div class="span3">
 
-
   <div class="friend-wrapper">
 
     <h2 class="wrapper-header">Friends</h2>
@@ -10,7 +9,8 @@
       <li ng-repeat="friend in friends | orderBy: 'name'"
           ui-sref-active="active">
 
-        <a ng-click="getFriendsBaskets(friend.id)">
+        <!-- <a ng-click="getFriendsBaskets(friend.id)"> -->
+        <a ui-sref="friends.baskets({friendID: friend.id })">
           
           <div class="friend-list-item">
           
@@ -28,56 +28,8 @@
 
 </div> <!-- span3 -->
 
-<div class="span3 friends-baskets">
+<div class="span3">
 
-  <div class="basket-wrapper">
-    <!-- <h2>BASKETS</h2> -->
-    <ul class="baskets">
+  <div ui-view></div>
 
-      <li ng-repeat="basket in friendBaskets | orderBy: 'name'"
-          ui-sref-active="active">
-
-        <a ng-click="getLinkstoBasket(basket.name, basket.id)">
-
-          <div class="basket-list-item">
-
-            {{basket.name}}
-
-          </div>
-
-        </a>
-
-      </li>
-
-    </ul> <!-- baskets -->
-
-  </div> <!-- basket-wrapper -->
-
-</div> <!-- span3 -->
-
-<div class="span6">
-
-  <h2>{{basketName}}</h2>
-
-  <ul class="link-list">
-
-    <li ng-repeat="link in friendBasketsLinks | orderBy: '-created_at'">
-
-      <div class="link-wrapper">
-        <i class="fa fa-trash link-trash"
-            ng-click="deleteLink(link.folder_id, link.id)"></i>
-        <a href="{{link.url}}" target="_blank" class="link">
-          <!-- <img ng-src="{{link.image}}" alt="test"/> -->
-          <p class="date-time">{{link.created_at}}</p>
-          <p class="title">{{link.title}}</p>
-          <!-- <p class="description">{{link.description}}</p> -->
-          <p class="message">{{link.message | limitTo: 15 }}{{link.message.length > 15 ? '...' : ''}}</p>
-          <!-- <p>{{link.description}}</p> -->
-        </a>
-      </div>  <!-- link-wrapper -->
-
-    </li>
-
-  </ul> <!-- baskets -->
-
-</div> <!-- span6 -->
+</div>

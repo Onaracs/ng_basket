@@ -20,4 +20,6 @@
 class JoinBasket < ActiveRecord::Base
   belongs_to :folder
   belongs_to :user
+
+  # ADD AN OWNER FALSE HERE FOR THE LOOP
 end

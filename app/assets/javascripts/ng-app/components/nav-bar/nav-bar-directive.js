@@ -1,5 +1,5 @@
 angular.module('NavBar', ['currentUser'])
-  .directive('navBar', ['getCurrentUser', function navBar( getCurrentUser ) {
+  .directive('navBar', ['$rootScope', 'getCurrentUser', function navBar( $rootScope, getCurrentUser ) {
 
   return {
     restrict: 'EA',
@@ -9,9 +9,11 @@ angular.module('NavBar', ['currentUser'])
     templateUrl: 'ng-app/components/nav-bar/nav-bar.html',
     link: function ( scope, $ele, $attrs ) {
 
+      console.log($rootScope);
+
       getCurrentUser().then(function(result) {
 
-        console.log(result.data);
+        $rootScope.user = result.data;
         scope.user = result.data;
 
       })
