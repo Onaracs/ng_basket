@@ -23,7 +23,6 @@ angular.module('FriendCtrl', [
     getFriendsBaskets(friendID).then(function(response) {
 
       $scope.friendBaskets = response.data;
-      console.log($scope);
 
     })
 

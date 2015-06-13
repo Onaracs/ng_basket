@@ -26,7 +26,7 @@ angular.module('getFriends', [])
 .factory('getFriendsBaskets',  ['$http', function($http) {
 
   return function(friendID) {
-    console.log('firing');
+
     var url = 'http://localhost:3000/ng_friends_baskets'
 
     var promise = $http({
@@ -35,7 +35,6 @@ angular.module('getFriends', [])
       method: 'GET'
     }).success(function(response) {
 
-      console.log(response);
       return response;
 
     }).error(function(response) {

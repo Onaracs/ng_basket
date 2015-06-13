@@ -1,0 +1,115 @@
+@font-face {
+	font-family: 'icomoon';
+	src:url('fonts/icomoon.eot?-6pm1k5');
+	src:url('fonts/icomoon.eot?#iefix-6pm1k5') format('embedded-opentype'),
+		url('fonts/icomoon.ttf?-6pm1k5') format('truetype'),
+		url('fonts/icomoon.woff?-6pm1k5') format('woff'),
+		url('fonts/icomoon.svg?-6pm1k5#icomoon') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+	font-family: 'icomoon';
+	speak: none;
+	font-style: normal;
+	font-weight: normal;
+	font-variant: normal;
+	text-transform: none;
+	line-height: 1;
+
+	/* Better Font Rendering =========== */
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+.icon-Basket:before {
+	content: "\e600";
+}
+.icon-BasketEyes:before {
+	content: "\e601";
+}
+.icon-star:before {
+	content: "\f005";
+}
+.icon-star-o:before {
+	content: "\f006";
+}
+.icon-user:before {
+	content: "\f007";
+}
+.icon-check:before {
+	content: "\f00c";
+}
+.icon-close:before {
+	content: "\f00d";
+}
+.icon-remove:before {
+	content: "\f00d";
+}
+.icon-times:before {
+	content: "\f00d";
+}
+.icon-share-square-o:before {
+	content: "\f045";
+}
+.icon-check-square-o:before {
+	content: "\f046";
+}
+.icon-plus-circle:before {
+	content: "\f055";
+}
+.icon-minus-circle:before {
+	content: "\f056";
+}
+.icon-plus:before {
+	content: "\f067";
+}
+.icon-minus:before {
+	content: "\f068";
+}
+.icon-facebook-square:before {
+	content: "\f082";
+}
+.icon-group:before {
+	content: "\f0c0";
+}
+.icon-users:before {
+	content: "\f0c0";
+}
+.icon-quote-left:before {
+	content: "\f10d";
+}
+.icon-thumbs-up:before {
+	content: "\f164";
+}
+.icon-thumbs-down:before {
+	content: "\f165";
+}
+.icon-delicious:before {
+	content: "\f1a5";
+}
+.icon-slideshare:before {
+	content: "\f1e7";
+}
+.icon-facebook-official:before {
+	content: "\f230";
+}
+.icon-user-plus:before {
+	content: "\f234";
+}
+.icon-unlock:before {
+	content: "\f09c";
+}
+.icon-unlock-alt:before {
+	content: "\f13e";
+}
+.icon-wechat:before {
+	content: "\f1d7";
+}
+.icon-weixin:before {
+	content: "\f1d7";
+}
+.icon-trash:before {
+	content: "\f1f8";
+}

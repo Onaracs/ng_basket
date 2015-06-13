@@ -1,0 +1,31 @@
+<div class="span6">
+
+  <h2>{{basketName}}</h2>
+
+  <join-basket-button
+      user-id="user.id"
+      basket-id="basketID"
+  ></join-basket-button>
+
+  <ul class="link-list">
+
+    <li ng-repeat="link in friendBasketsLinks | orderBy: '-created_at'">
+
+      <div class="link-wrapper">
+        <i class="fa fa-trash link-trash"
+            ng-click="deleteLink(link.folder_id, link.id)"></i>
+        <a href="{{link.url}}" target="_blank" class="link">
+          <!-- <img ng-src="{{link.image}}" alt="test"/> -->
+          <p class="date-time">{{link.created_at}}</p>
+          <p class="title">{{link.title}}</p>
+          <!-- <p class="description">{{link.description}}</p> -->
+          <p class="message">{{link.message | limitTo: 15 }}{{link.message.length > 15 ? '...' : ''}}</p>
+          <!-- <p>{{link.description}}</p> -->
+        </a>
+      </div>  <!-- link-wrapper -->
+
+    </li>
+
+  </ul> <!-- baskets -->
+
+</div> <!-- span6 -->
