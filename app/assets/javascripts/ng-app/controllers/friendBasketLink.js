@@ -1,7 +1,8 @@
 angular.module('FriendBasketLinkCtrl', [
   'getBaskets',
   'currentUser',
-  'joinBasketButton'
+  'joinBasketButton',
+  'popupJoinBasketModal'
 ])
 
 .controller('FriendBasketLinkCtrl', ['$rootScope', '$stateParams', '$scope', 'getLinkstoBasket', 'getCurrentUser', function(
@@ -14,6 +15,8 @@ angular.module('FriendBasketLinkCtrl', [
 
   $scope.basketName = $stateParams.basketName;
   $scope.basketID = $stateParams.basketID;
+
+  $scope.showJoinModal = false;
 
   getCurrentUser().then(function(response) {
 

@@ -5,24 +5,23 @@ angular.module('popupJoinBasketModal', [])
     return {
       restrict: 'EA',
       scope: {
-        showDeleteLink: '=', // for html file
-        linkId: '=',
-        basketId: '=',
-        linkTitle: '=',
-        links: '='
+        showJoinModal: '=', // for html file
+        userId: '=',
+        basketId: '='
       },
       templateUrl: 'ng-app/components/popup-join-basket-modal/popup-join-basket-modal.html',
       link: function( scope, $ele, $attrs ) {
 
+        console.log(scope);
         
         scope.joinBasket = function() {
 
-
+          console.log('oh you joining dis basket allllright');
 
           }
 
-      } // delete link
-    }
+      } // link
 
+    } // return
 
   }])

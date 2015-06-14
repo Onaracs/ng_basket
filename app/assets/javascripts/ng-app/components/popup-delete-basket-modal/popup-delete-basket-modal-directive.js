@@ -15,6 +15,8 @@ angular.module('popupDeleteBasketModal', [])
       templateUrl: 'ng-app/components/popup-delete-basket-modal/popup-delete-basket-modal.html',
       link: function( scope, $ele, $attrs ) {
         
+        console.log(scope);
+
         scope.delete = function(basketID) {
 
           var promise = $http({
@@ -25,9 +27,13 @@ angular.module('popupDeleteBasketModal', [])
             }
           }).success(function(response) {
             
-            console.log(response);
-            scope.baskets = response;
+            scope.$apply(function() {
 
+              console.log(response);
+              scope.baskets = response;
+
+
+            })
             $state.go('basket.shared');
 
           }).error(function(response) {

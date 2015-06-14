@@ -12,6 +12,8 @@ angular.module('LinkCtrl', [
   getLinkstoBasket
 ) {
 
+  console.log($scope);
+  
   $scope.showDeleteBasketModal = false;
   $scope.showDeleteLinkModal = false;
 

@@ -2,10 +2,21 @@
 
   <h2>{{basketName}}</h2>
 
-  <join-basket-button
+  <!-- <join-basket-button
       user-id="user.id"
       basket-id="basketID"
-  ></join-basket-button>
+  ></join-basket-button> -->
+  <h2 ng-click="showJoinModal = true">Join Basket</h2>
+
+  <div ng-show="showJoinModal">
+
+    <popup-join-basket-modal
+          show-join-modal="showJoinModal"
+          user-id="basketID"
+          basket-id="user.id">
+    </popup-join-basket-modal>
+
+  </div>
 
   <ul class="link-list">
 
