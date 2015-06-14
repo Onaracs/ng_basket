@@ -1,5 +1,5 @@
 angular.module('popupJoinBasketModal', [])
-  .directive('popupJoinBasketModal', ['$http', function($http
+  .directive('popupJoinBasketModal', ['$http', function( $http 
   ) {
 
     return {
@@ -11,14 +11,34 @@ angular.module('popupJoinBasketModal', [])
       },
       templateUrl: 'ng-app/components/popup-join-basket-modal/popup-join-basket-modal.html',
       link: function( scope, $ele, $attrs ) {
-
-        console.log(scope);
         
         scope.joinBasket = function() {
 
-          console.log('oh you joining dis basket allllright');
+          var promise = $http({
+            url: 'http://localhost:3000/join_baskets',
+            dataType: 'json',
+            method: 'POST',
+            params: {
+              userID: scope.userId,
+              basketID: scope.basketId
+            },
+            headers: {'Content-Type': 'application/json'}
+          }).success(function(response) {
+            
+            console.log(response);          
+            // $scope.baskets.push(response);
+            scope.showJoinModal = false;
+            
+            // $scope.showForm = false;
+            // return $scope.baskets;
 
-          }
+          }).error(function(response) {
+
+            return {'status': false};
+
+          })
+
+        } // joinBasket()
 
       } // link
 
