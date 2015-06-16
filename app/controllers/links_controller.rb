@@ -12,6 +12,9 @@ class LinksController < ApplicationController
     respond_to do |format|
       format.json { render :json => links }
     end
+
+    # data["date"] = link.created_at.strftime("%a, %b %d")
+    # data["time"] = link.created_at.strftime("%l:%M%P")
     
   end
 

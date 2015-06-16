@@ -16,8 +16,8 @@ class SharedLinksController < ApplicationController
     @shared_link = SharedLink.new(sender_id: current_user.id,
                                     shared_basket_id: friend.id,
                                       url: params["url"],
-                                      message: params["message"],
                                       title: params["title"],
+                                      message: params["message"],
                                       description: params["description"],
                                       image: params["image"])
 

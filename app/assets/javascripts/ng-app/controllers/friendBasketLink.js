@@ -1,7 +1,6 @@
 angular.module('FriendBasketLinkCtrl', [
   'getBaskets',
   'currentUser',
-  'joinBasketButton',
   'popupJoinBasketModal'
 ])
 
