@@ -4,11 +4,11 @@ angular.module('FriendBasketLinkCtrl', [
   'joinBasketToggle'
 ])
 
-.controller('FriendBasketLinkCtrl', ['$rootScope', '$stateParams', '$scope', 'getLinkstoBasket', 'getCurrentUser', function(
+.controller('FriendBasketLinkCtrl', ['$rootScope', '$stateParams', '$scope', 'getBasketInfo', 'getCurrentUser', function(
   $rootScope,
   $stateParams,
   $scope,
-  getLinkstoBasket,
+  getBasketInfo,
   getCurrentUser
 ) {
 
@@ -22,11 +22,11 @@ angular.module('FriendBasketLinkCtrl', [
     $scope.user = response.data;
 
   })
-  
-  getLinkstoBasket($stateParams.basketID).then(function(response) {
-    
-    $scope.friendBasketsLinks = response.data;
 
-  });
+  getBasketInfo($stateParams.basketID).then(function(response) {
+
+    console.log(response);
+
+  })
 
 }])

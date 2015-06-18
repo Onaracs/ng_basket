@@ -6,7 +6,6 @@
 
       <li ng-repeat="basket in friendBaskets | orderBy: 'name'">
 
-        <!-- <a ng-click="getLinkstoBasket(basket.name, basket.id)"> -->
         <a ui-sref="friends.baskets.links({basketName: basket.name,
         basketID: basket.id})">
 
