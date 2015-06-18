@@ -1,24 +1,28 @@
 .navbar-inner {
   font-family: 'Open Sans';
   height: 50px;
-  background: #fff;
+  background: #90EE90;
   color: #222;
   .container {
     .brand-img {
-      background: #90EE90;
+      position: absolute;
+      width: 7%;
+      height: 100%;
+      left: 0;
       i {
         display: inline-block;
         font-size: 42px;
         float: left;
-        /* height: 100%; */
-        /* width: 100%; */
         margin-right: 10px;
         position: absolute;
         top: 0;
+        left: 25%;
       }
     }
     .brand {
+      font-family: 'Lato';
       color: #222;
+      margin-left: 0;
       p {
         display: inline-block;
         font-size: 30px;
@@ -34,8 +38,12 @@
         text-transform: uppercase;
         // font-family: 'Lato';
         a {
-          color: #222;
+          color: #505050;
           text-shadow: 0 0px;
+          &:hover {
+            border-bottom: 1px solid #222;
+            color: #222;
+          }
         }
       } // navbar-nav
       // .friends-button::after {
