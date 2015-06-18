@@ -31,8 +31,7 @@
 
       <li ng-repeat="basket in baskets | orderBy: 'name'"
           ui-sref-active="active">
-        <a ui-sref="basket.links({basketName: basket.name,
-                                  basketID: basket.id})">
+        <a ui-sref="basket.links({basketID: basket.id})">
           <div class="basket-list-item">
             {{basket.name}}
             <p ng-if="user.id != basket.user_id">

@@ -36,7 +36,7 @@ angular
         controller: 'BasketCtrl'
       })
       .state('basket.links', {
-        url: 'links/:basketName/:basketID',
+        url: 'links/:basketID',
         templateUrl: 'links.html',
         controller: 'LinkCtrl'
       })
