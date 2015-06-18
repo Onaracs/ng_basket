@@ -1,5 +1,5 @@
 <h2 class="basket-name">{{info.name}}</h2>
-<h4>Owner: </h4>
+<h4>Owner: {{owner.name}}</h4>
 
 <div ng-class="{'hide-modal': showDeleteBasketModal === false}">
 
@@ -12,7 +12,8 @@
 
 </div>
 
-<div class="delete-basket-check" 
+<div ng-show="owner.id === user.id"
+      class="delete-basket-check" 
       ng-click="showDeleteBasketModal = !showDeleteBasketModal">
   Delete Basket
 </div>
