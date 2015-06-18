@@ -40,6 +40,7 @@ angular.module('BasketCtrl', [
       $scope.baskets.push(response);
       
       $scope.showForm = false;
+      $scope.newBasketName = '';
       return $scope.baskets;
 
     }).error(function(response) {

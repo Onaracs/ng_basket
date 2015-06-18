@@ -1,7 +1,7 @@
 angular.module('FriendBasketLinkCtrl', [
   'getBaskets',
   'currentUser',
-  'popupJoinBasketModal'
+  'joinBasketToggle'
 ])
 
 .controller('FriendBasketLinkCtrl', ['$rootScope', '$stateParams', '$scope', 'getLinkstoBasket', 'getCurrentUser', function(
