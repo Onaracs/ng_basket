@@ -21,7 +21,8 @@ angular.module('LinkCtrl', [
   getBasketInfo($stateParams.basketID).then(function(response) {
 
     console.log(response);
-    $scope.basketName = response.data.info.name;
+    $scope.info = response.data.info;
+    $scope.owner = response.data.owner;
     $scope.followers = response.data.followers;
     $scope.links = response.data.links;
 

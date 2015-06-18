@@ -43,6 +43,8 @@ class FoldersController < ApplicationController
     @basket[:info] = basket
     # Return basket links
     @basket[:links] = basket.links
+    # Return basket owner info
+    @basket[:owner] = User.find(basket.user_id)
     # Return basket followers
     @basket[:followers] = basket.users
 
