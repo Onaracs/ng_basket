@@ -6,7 +6,7 @@
       user-id="user.id"
       basket-id="basketID"
   ></join-basket-button> -->
-  <h2 ng-click="showJoinModal = true">Join Basket</h2>
+<!--   <h2 ng-click="showJoinModal = true">Join Basket</h2>
 
   <div ng-show="showJoinModal">
 
@@ -16,7 +16,10 @@
           basket-id="basketID">
     </popup-join-basket-modal>
 
-  </div>
+  </div> -->
+  <join-basket-toggle
+    show-join-modal="showJoinModal">
+  </join-basket-toggle>
 
   <ul class="link-list">
 

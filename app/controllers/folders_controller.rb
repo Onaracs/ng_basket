@@ -34,6 +34,22 @@ class FoldersController < ApplicationController
   end
 
   #*** ANGULAR ROUTE ***#
+  def ng_basket_info
+
+    @basket = {}
+    basket = Folder.find(params["basketID"])
+
+    # Return basket info
+    @basket[:info] = basket
+    # Return basket links
+    @basket[:links] = basket.links
+    # Return basket followers
+    @basket[:followers] = basket.users
+
+    render :json => @basket
+
+  end
+
   def ng_users_folders
 
     user = User.find(current_user.id)

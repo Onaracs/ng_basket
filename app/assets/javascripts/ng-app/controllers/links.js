@@ -4,24 +4,23 @@ angular.module('LinkCtrl', [
   'popupDeleteLinkModal'
 ])
 
-.controller('LinkCtrl', ['$stateParams', '$scope', '$http', '$state', 'getBasketInfo', 'getLinkstoBasket', function(
+.controller('LinkCtrl', ['$stateParams', '$scope', '$http', '$state', 'getBasketInfo', function(
   $stateParams,
   $scope,
   $http,
   $state,
-  getBasketInfo,
-  getLinkstoBasket
+  getBasketInfo
 ) {
 
   $scope.showDeleteBasketModal = false;
   $scope.showDeleteLinkModal = false;
 
-  $scope.basketName = $stateParams.basketName;
   $scope.basketID = $stateParams.basketID;
 
   getBasketInfo($stateParams.basketID).then(function(response) {
 
     console.log(response);
+    $scope.followers = response.data.followers;
     $scope.links = response.data.links;
 
   })

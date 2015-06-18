@@ -14,8 +14,6 @@ angular.module('popupDeleteBasketModal', [])
       },
       templateUrl: 'ng-app/components/popup-delete-basket-modal/popup-delete-basket-modal.html',
       link: function( scope, $ele, $attrs ) {
-        
-        console.log(scope);
 
         scope.delete = function(basketID) {
 

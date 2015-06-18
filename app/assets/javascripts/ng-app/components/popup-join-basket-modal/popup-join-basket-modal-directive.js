@@ -24,8 +24,7 @@ angular.module('popupJoinBasketModal', [])
             },
             headers: {'Content-Type': 'application/json'}
           }).success(function(response) {
-            
-            console.log(response);          
+        
             // $scope.baskets.push(response);
             scope.showJoinModal = false;
             
