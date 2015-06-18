@@ -1,13 +1,10 @@
 angular.module('FriendCtrl', [
-  'getFriends',
-  'getBaskets'
+  'getFriends'
 ])
 
-.controller('FriendCtrl', ['$scope', 'getUsersFriends', 'getFriendsBaskets', 'getLinkstoBasket', function(
+.controller('FriendCtrl', ['$scope', 'getUsersFriends', function(
   $scope,
-  getUsersFriends,
-  getFriendsBaskets,
-  getLinkstoBasket
+  getUsersFriends
 ) {
 
   getUsersFriends().then(function(response) {
@@ -16,28 +13,5 @@ angular.module('FriendCtrl', [
 
   })
 
-  $scope.getFriendsBaskets = function(friendID) {
-
-    // console.log(friendID);
-    // $scope.friendID = friendID;
-    getFriendsBaskets(friendID).then(function(response) {
-
-      $scope.friendBaskets = response.data;
-
-    })
-
-  }
-
-  $scope.getLinkstoBasket = function(basketName, basketID) {
-
-    $scope.basketName = basketName;
-    
-    getLinkstoBasket(basketID).then(function(response) {
-      
-      $scope.friendBasketsLinks = response.data;
-
-    });
-    
-  }
 
 }])
