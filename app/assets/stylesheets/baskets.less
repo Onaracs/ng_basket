@@ -71,6 +71,7 @@
 
         .basket-list-item,
         .friend-list-item {
+          position: relative;
           padding: 10px 0 10px 25px;
           border-top: 1px solid #212121;
           border-bottom: 1px solid #0a0c0e;
@@ -78,6 +79,16 @@
           &:hover {
             border-top: 1px solid #111;
             border-bottom: 1px solid #0a0c0e;
+          }
+
+          p {
+            margin: 0;
+            i {
+              margin-right: 20px;
+              position: absolute;
+              right: 0;
+              top: 12px;
+            }
           }
 
         } // basket-list-item
