@@ -1,0 +1,11 @@
+<h2 ng-click="showJoinModal = true">Join Basket</h2>
+
+<div ng-show="showJoinModal">
+
+  <popup-join-basket-modal
+        show-join-modal="showJoinModal"
+        user-id="user.id"
+        basket-id="basketID">
+  </popup-join-basket-modal>
+
+</div>
