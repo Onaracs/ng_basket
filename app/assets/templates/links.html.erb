@@ -16,9 +16,11 @@
   Delete Basket
 </div>
 
-<basket-followers-section
-  followers="followers">
-</basket-followers-section>
+<div ng-hide="followers.length === 0">
+  <basket-followers-section
+    followers="followers">
+  </basket-followers-section>
+</div>
 
 <ul class="link-list">
 

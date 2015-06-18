@@ -1,13 +1,15 @@
-{{followers}}
 <div ng-show="followers != []" 
     class="followers-wrapper">
 
-  <h1>the section for followers!</h1>
+  <h2>People following basket:</h2>
 
   <ul ng-repeat="follower in followers" 
       class="followers-list">
 
-      <li>{{follower.name}}</li>
+      <li ui-sref="friends.baskets({friendID: follower.uid})">
+        <img ng-src="{{follower.image}}">
+        <p>{{follower.name}}</p>
+      </li>
 
   </ul>
 
