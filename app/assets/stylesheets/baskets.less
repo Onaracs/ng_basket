@@ -10,13 +10,38 @@
   }
 }
 
+  ::-webkit-scrollbar {
+        background-color: #333333;
+        width: 4px;
+  } /* the new scrollbar will have a flat appearance with the set background color */
+   
+  ::-webkit-scrollbar-thumb {
+        background-color: rgba(0, 0, 0, 0.2); 
+  } /* this will style the thumb, ignoring the track */
+   
+  ::-webkit-scrollbar-button {
+        background-color: #7c2929;
+  } /* optionally, you can style the top and the bottom buttons (left and right for horizontal bars) */
+   
+  ::-webkit-scrollbar-corner {
+        background-color: black;
+  } /* if both the vertical and the horizontal bars appear, then perhaps the right bottom corner also needs to be styled */
 .basket-wrapper,
 .friend-wrapper {
+  position: fixed;
+  top: 0;
+  /* left: 10px; */
+  bottom: 0;
+  width: 20%;
+  overflow-y: auto;
+  padding-top: 50px;
+
   background: #191919;
   color: white;
-  padding-bottom: 10000px;
-  margin-bottom: -10000px;
-  overflow: hidden;
+  // padding-bottom: 10000px;
+  // margin-bottom: -10000px;
+  // overflow: hidden;
+
   font-family: 'Lato';
   form {
     input[type="text"] {
