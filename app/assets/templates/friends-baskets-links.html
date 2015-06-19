@@ -1,6 +1,7 @@
 <div class="span6">
 
   <h2>{{basketName}}</h2>
+  <h4>Owner: {{owner.name}}</h4>
 
   <!-- <join-basket-button
       user-id="user.id"
@@ -21,9 +22,15 @@
     show-join-modal="showJoinModal">
   </join-basket-toggle>
 
+  <div ng-hide="followers.length === 0">
+    <basket-followers-section
+      followers="followers">
+    </basket-followers-section>
+  </div>
+
   <ul class="link-list">
 
-    <li ng-repeat="link in friendBasketsLinks | orderBy: '-created_at'">
+    <li ng-repeat="link in links | orderBy: '-created_at'">
 
       <div class="link-wrapper">
         <i class="fa fa-trash link-trash"
