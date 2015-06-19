@@ -1,13 +1,13 @@
 <h2 class="basket-name">{{info.name}}</h2>
 <h4>Owner: {{owner.name}}</h4>
 
-<div ng-class="{'hide-modal': showDeleteBasketModal === false}">
+<!-- <div ng-class="{'hide-modal': showDeleteBasketModal === false}"> -->
+<div ng-show="showDeleteBasketModal">
 
   <popup-delete-basket-modal
         delete-basket="showDeleteBasketModal"
-        basket-name="basketName"
-        basket-id="basketID"
         baskets="$parent.baskets"
+        basket-info="info"
   ></popup-delete-basket-modal>
 
 </div>

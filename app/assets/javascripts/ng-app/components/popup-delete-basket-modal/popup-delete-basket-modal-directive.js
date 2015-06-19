@@ -8,12 +8,15 @@ angular.module('popupDeleteBasketModal', [])
       restrict: 'EA',
       scope: {
         deleteBasket: '=', // for html file
-        basketName: '=',
-        basketId: '=',
+        basketInfo: '=',
         baskets: '='
       },
       templateUrl: 'ng-app/components/popup-delete-basket-modal/popup-delete-basket-modal.html',
       link: function( scope, $ele, $attrs ) {
+
+        console.log(scope);
+        // scope.basketName = scope.basketInfo.name;
+        // scope.basketID = scope.basketInfo.id;
 
         scope.delete = function(basketID) {
 
