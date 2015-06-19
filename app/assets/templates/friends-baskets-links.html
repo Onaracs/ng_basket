@@ -19,13 +19,17 @@
 
   </div> -->
   <join-basket-toggle
+    followers="followers"
+    user="user"
     show-join-modal="showJoinModal">
   </join-basket-toggle>
 
   <div ng-hide="followers.length === 0">
+
     <basket-followers-section
       followers="followers">
     </basket-followers-section>
+
   </div>
 
   <ul class="link-list">

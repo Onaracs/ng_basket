@@ -3,18 +3,6 @@ class LinksController < ApplicationController
 
   skip_before_filter  :verify_authenticity_token
 
-  def ng_basket_links
-    
-    #Add in logic here to return a string if no user is signed in!
-    folder = Folder.find(params["basketID"])
-    links = folder.links
-    
-    respond_to do |format|
-      format.json { render :json => links }
-    end
-    
-  end
-
   def new_link
 
     @link = Link.new(url: params["url"],
