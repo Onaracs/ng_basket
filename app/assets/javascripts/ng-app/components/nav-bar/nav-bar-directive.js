@@ -20,7 +20,7 @@ angular.module('NavBar', ['currentUser'])
 
       scope.chromeExtensionInstall = function() {
         console.log('install extension')
-        chrome.webstore.install('https://chrome.google.com/webstore/detail/jcglidocjalkkefbmnobddombekpancl')
+        chrome.webstore.install();
       }
 
     }
