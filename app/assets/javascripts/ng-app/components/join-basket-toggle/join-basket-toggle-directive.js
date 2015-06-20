@@ -1,25 +1,17 @@
 angular.module('joinBasketToggle', ['popupJoinBasketModal'])
   .directive('joinBasketToggle', function() {
 
-    var checkJoinStatus = function() {
+    var checkJoinStatus = function(followers) {
 
-      var url = '';
+      // console.log(followers);
 
-      var promise = $http({
-        url: url,
-        params: {basketID: basketID},
-        method: 'GET'
-      }).success(function(response) {
+      // followersIds = followers.map(function(follower) {
 
-        return response;
+      //   return follower.id
 
-      }).error(function(response) {
+      // })
 
-        return {'status':false};
-
-      })
-
-      return promise;
+      // console.log(followersIds);
 
     }
 
@@ -33,15 +25,34 @@ angular.module('joinBasketToggle', ['popupJoinBasketModal'])
       templateUrl: 'ng-app/components/join-basket-toggle/join-basket-toggle.html',
       link: function( scope, $ele, $attrs ) {
 
-        // console.log(scope);
-        // array = _.map(scope.followers, function(follower) {
+        // checkJoinStatus(scope.followers);
 
-        //   return follower.id;
+        // scope.$watch('followers', function(newValue, oldValue) {
 
-        // })
+        //   followersIds = scope.followers.map(function(follower) {
 
-        // console.log(array);
-        // see if user is already joined here!
+        //     return follower.id
+
+        //   })
+
+        //   if (followersIds.indexOf(user.id) != -1) {
+
+        //     scope.unfollow = true;
+
+        //   } else {
+
+        //     scope.follow = true;
+
+        //   }
+
+        // }, true)
+
+
+        scope.unfollow = function() {
+
+          console.log('this will unfollow basket');
+
+        }
 
       } // link
 

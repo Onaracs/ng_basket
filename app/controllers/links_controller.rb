@@ -14,8 +14,8 @@ class LinksController < ApplicationController
 
     if @link.save
       folder = Folder.find(params["uniqueId"].to_i)
-      @links = folder.links
-      render :json => @links
+      
+      render :json => folder
     end
 
   end

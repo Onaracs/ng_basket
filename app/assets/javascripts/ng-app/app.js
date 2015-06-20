@@ -23,15 +23,15 @@ angular
     //   console.log(result);
     // })
 
-    $urlRouterProvider.otherwise('shared');
+    $urlRouterProvider.otherwise('about');
 
     $stateProvider
       .state('about', {
-        url: '/about',
+        url: '/',
         templateUrl: 'about.html'
       })
       .state('basket', {
-        url: '/',
+        url: '/baskets',
         templateUrl: 'baskets.html',
         controller: 'BasketCtrl'
       })

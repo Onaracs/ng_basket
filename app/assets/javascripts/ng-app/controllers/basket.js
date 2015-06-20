@@ -1,7 +1,8 @@
 angular.module('BasketCtrl', [
   'getBaskets', 
   'newBasketButtonDirective',
-  'currentUser'
+  'currentUser',
+  'basketsInfoBox'
 ])
 
 .controller('BasketCtrl', ['$scope', '$http', 'getUsersBaskets', 'getCurrentUser', function(
