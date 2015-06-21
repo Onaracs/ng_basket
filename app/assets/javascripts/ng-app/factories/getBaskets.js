@@ -35,7 +35,6 @@ angular.module('getBaskets', [])
       method: 'GET'
     }).success(function(response) {
 
-      console.log(response);
       return response;
 
     }).error(function(response) {

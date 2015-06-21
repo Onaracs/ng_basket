@@ -9,8 +9,6 @@ angular.module('NavBar', ['currentUser'])
     templateUrl: 'ng-app/components/nav-bar/nav-bar.html',
     link: function ( scope, $ele, $attrs ) {
 
-      console.log($rootScope);
-
       getCurrentUser().then(function(result) {
 
         $rootScope.user = result.data;

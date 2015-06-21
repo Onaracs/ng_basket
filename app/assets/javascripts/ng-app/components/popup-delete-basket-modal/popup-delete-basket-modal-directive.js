@@ -13,8 +13,6 @@ angular.module('popupDeleteBasketModal', [])
       },
       templateUrl: 'ng-app/components/popup-delete-basket-modal/popup-delete-basket-modal.html',
       link: function( scope, $ele, $attrs ) {
-
-        console.log(scope);
         // scope.basketName = scope.basketInfo.name;
         // scope.basketID = scope.basketInfo.id;
 
@@ -30,11 +28,10 @@ angular.module('popupDeleteBasketModal', [])
             
             scope.$apply(function() {
 
-              console.log(response);
               scope.baskets = response;
 
-
             })
+            
             $state.go('basket.shared');
 
           }).error(function(response) {

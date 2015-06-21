@@ -3,15 +3,18 @@ angular.module('joinBasketToggle', ['popupJoinBasketModal'])
 
     var checkJoinStatus = function(followers) {
 
-      // console.log(followers);
+      console.log(followers);
+      var followersIds = [];
 
-      // followersIds = followers.map(function(follower) {
+      // use a .map in a refactor
+      for (var i = 0; i < followers.length; i++) {
 
-      //   return follower.id
+        followersIds.push(followers[i].id);
 
-      // })
+      }
 
-      // console.log(followersIds);
+      console.log(followersIds);
+      return followersIds;
 
     }
 
@@ -25,27 +28,8 @@ angular.module('joinBasketToggle', ['popupJoinBasketModal'])
       templateUrl: 'ng-app/components/join-basket-toggle/join-basket-toggle.html',
       link: function( scope, $ele, $attrs ) {
 
-        // checkJoinStatus(scope.followers);
+        checkJoinStatus(scope.followers);
 
-        // scope.$watch('followers', function(newValue, oldValue) {
-
-        //   followersIds = scope.followers.map(function(follower) {
-
-        //     return follower.id
-
-        //   })
-
-        //   if (followersIds.indexOf(user.id) != -1) {
-
-        //     scope.unfollow = true;
-
-        //   } else {
-
-        //     scope.follow = true;
-
-        //   }
-
-        // }, true)
 
 
         scope.unfollow = function() {

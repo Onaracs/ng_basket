@@ -23,7 +23,7 @@ angular
     //   console.log(result);
     // })
 
-    $urlRouterProvider.otherwise('about');
+    $urlRouterProvider.otherwise('/');
 
     $stateProvider
       .state('about', {
