@@ -15,8 +15,8 @@
 //= require angular
 //= require angular-resource
 //= require angular-animate
-//= require angular-ui-router
 //= require angular-rails-templates
+//= require angular-ui-router
 //= require_tree .
 //= require_tree ../templates
 
