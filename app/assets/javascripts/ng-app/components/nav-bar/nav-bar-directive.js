@@ -1,5 +1,8 @@
 angular.module('NavBar', ['currentUser'])
-  .directive('navBar', ['$rootScope', 'getCurrentUser', function navBar( $rootScope, getCurrentUser ) {
+  .directive('navBar', ['$rootScope', 'getCurrentUser', function navBar( 
+    $rootScope, 
+    getCurrentUser 
+  ) {
 
   return {
     restrict: 'EA',
