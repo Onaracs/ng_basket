@@ -1,4 +1,7 @@
-<h2 ng-click="showJoinModal = true">Follow Basket</h2>
+<h2 ng-hide="following" 
+  ng-click="showJoinModal = true">
+  Follow Basket
+</h2>
 
 <div ng-show="showJoinModal">
 
@@ -10,6 +13,6 @@
 
 </div>
 
-<h2 ng-show="unfollow" 
+<h2 ng-show="following" 
     ng-click="unfollow()">Unfollow Basket
 </h2>

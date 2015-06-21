@@ -25,7 +25,6 @@ angular.module('FriendBasketLinkCtrl', [
 
   getBasketInfo($stateParams.basketID).then(function(response) {
 
-    console.log(response);
     $scope.info = response.data.info;
     $scope.owner = response.data.owner;
     $scope.followers = response.data.followers;

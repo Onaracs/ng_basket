@@ -1,8 +1,9 @@
 angular.module('joinBasketToggle', ['popupJoinBasketModal'])
-  .directive('joinBasketToggle', function() {
+  .directive('joinBasketToggle', ['$timeout', function( $timeout ) {
 
-    var checkJoinStatus = function(followers) {
+    var checkJoinStatus = function(user, followers) {
 
+      console.log(user);
       console.log(followers);
       var followersIds = [];
 
@@ -14,7 +15,10 @@ angular.module('joinBasketToggle', ['popupJoinBasketModal'])
       }
 
       console.log(followersIds);
-      return followersIds;
+
+      var following = followersIds.indexOf(user.id) === -1 ? false : true
+
+      return following;
 
     }
 
@@ -28,18 +32,21 @@ angular.module('joinBasketToggle', ['popupJoinBasketModal'])
       templateUrl: 'ng-app/components/join-basket-toggle/join-basket-toggle.html',
       link: function( scope, $ele, $attrs ) {
 
-        checkJoinStatus(scope.followers);
+        // very Hackey!!!
+        // look to refactor
+        scope.$watchGroup(['user', 'followers'], function(newVal, oldVal) {
 
+          if ( newVal[0] != undefined && newVal[1] != undefined ) {
 
+            scope.following = checkJoinStatus(newVal[0], scope.followers);
+            console.log(scope.following);
 
-        scope.unfollow = function() {
+          }
 
-          console.log('this will unfollow basket');
-
-        }
+        })
 
       } // link
 
     } // return
 
-  })
+  }])
