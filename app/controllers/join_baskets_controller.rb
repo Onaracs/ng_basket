@@ -16,6 +16,13 @@ class JoinBasketsController < ApplicationController
 
   def destroy
 
+    join_basket = JoinBasket.where(user_id: params["userID"],
+                                  folder_id: params["basketID"])
+    join_basket[0].destroy
+    
+    @folder = Folder.find(params["basketID"])
+    render :json => @folder
+
   end
 
 end

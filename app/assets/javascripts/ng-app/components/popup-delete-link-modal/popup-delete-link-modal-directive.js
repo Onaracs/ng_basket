@@ -17,29 +17,29 @@ angular.module('popupDeleteLinkModal', [])
         
         scope.deleteLink = function(basketID, linkID) {
 
-            scope.showDeleteLink = false;
+          scope.showDeleteLink = false;
 
-            var promise = $http({
-              url: 'http://localhost:3000/links/' + linkID,
-              method: 'DELETE',
-              params: {
-                basketID: basketID,
-                linkID: linkID
-              }
-            }).success(function(response) {
+          var promise = $http({
+            url: 'http://localhost:3000/links/' + linkID,
+            method: 'DELETE',
+            params: {
+              basketID: basketID,
+              linkID: linkID
+            }
+          }).success(function(response) {
 
-              scope.links = response;
+            scope.links = response;
 
-            }).error(function(response) {
+          }).error(function(response) {
 
-              return {'status': false};
+            return {'status': false};
 
-            })
+          })
 
-          }
+        } // deleteLink()
 
-      } // delete link
-    }
+      } // link
 
+    } // return
 
   }])

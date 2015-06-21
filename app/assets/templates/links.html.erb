@@ -1,28 +1,36 @@
-<h2 class="basket-name">{{info.name}}</h2>
-<h4>Owner: {{owner.name}}</h4>
+<div class="links-heading-left">
 
-<!-- <div ng-class="{'hide-modal': showDeleteBasketModal === false}"> -->
-<div ng-show="showDeleteBasketModal">
+  <h2 class="basket-name">{{info.name}}</h2>
+  <h4>Owner: {{owner.name}}</h4>
 
-  <popup-delete-basket-modal
-        delete-basket="showDeleteBasketModal"
-        baskets="$parent.baskets"
-        basket-info="info"
-  ></popup-delete-basket-modal>
+  <!-- <div ng-class="{'hide-modal': showDeleteBasketModal === false}"> -->
+  <div ng-show="showDeleteBasketModal">
+
+    <popup-delete-basket-modal
+          delete-basket="showDeleteBasketModal"
+          baskets="$parent.baskets"
+          basket-info="info"
+    ></popup-delete-basket-modal>
+
+  </div>
+
+  <div ng-show="owner.id === user.id"
+        class="delete-basket-check" 
+        ng-click="showDeleteBasketModal = !showDeleteBasketModal">
+    <i class="fa fa-trash-o"></i>
+    Delete Basket
+  </div>
 
 </div>
 
-<div ng-show="owner.id === user.id"
-      class="delete-basket-check" 
-      ng-click="showDeleteBasketModal = !showDeleteBasketModal">
-  <i class="fa fa-trash-o"></i>
-  Delete Basket
-</div>
+<div class="links-heading-right">
 
-<div ng-hide="followers.length === 0">
-  <basket-followers-section
-    followers="followers">
-  </basket-followers-section>
+  <div ng-hide="followers.length === 0">
+    <basket-followers-section
+      followers="followers">
+    </basket-followers-section>
+  </div>
+
 </div>
 
 <ul class="link-list">

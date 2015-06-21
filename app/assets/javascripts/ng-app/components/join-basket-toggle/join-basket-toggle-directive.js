@@ -1,10 +1,8 @@
 angular.module('joinBasketToggle', ['popupJoinBasketModal'])
-  .directive('joinBasketToggle', ['$timeout', function( $timeout ) {
+  .directive('joinBasketToggle', ['$http', function( $http ) {
 
     var checkJoinStatus = function(user, followers) {
 
-      console.log(user);
-      console.log(followers);
       var followersIds = [];
 
       // use a .map in a refactor
@@ -13,8 +11,6 @@ angular.module('joinBasketToggle', ['popupJoinBasketModal'])
         followersIds.push(followers[i].id);
 
       }
-
-      console.log(followersIds);
 
       var following = followersIds.indexOf(user.id) === -1 ? false : true
 
@@ -39,11 +35,34 @@ angular.module('joinBasketToggle', ['popupJoinBasketModal'])
           if ( newVal[0] != undefined && newVal[1] != undefined ) {
 
             scope.following = checkJoinStatus(newVal[0], scope.followers);
-            console.log(scope.following);
 
           }
 
-        })
+        }) // $watchGroup
+
+        scope.unfollow = function(userID, basketID) {
+
+          console.log('unfolloing this basket!')
+          console.log(userID)
+          console.log(basketID)
+          var promise = $http({
+            url: 'http://localhost:3000/join_baskets/' + userID + basketID,
+            method: 'DELETE',
+            params: {
+              userID: userID,
+              basketID: basketID
+            }
+          }).success(function(response) {
+
+            scope.following = false;
+
+          }).error(function(response) {
+
+            return {'status': false};
+
+          })
+
+        }
 
       } // link
 
