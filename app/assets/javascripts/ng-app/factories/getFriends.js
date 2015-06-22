@@ -3,7 +3,8 @@ angular.module('getFriends', [])
 .factory('getUsersFriends', ['$http', function($http) {
 
   return function() {
-    var url = 'http://localhost:3000/ng_users_friends'
+    // var url = 'http://localhost:3000/ng_users_friends'
+    var url = '/ng_users_friends'
 
     var promise = $http({
       url: url,
@@ -27,7 +28,8 @@ angular.module('getFriends', [])
 
   return function(friendID) {
 
-    var url = 'http://localhost:3000/ng_friends_baskets'
+    // var url = 'http://localhost:3000/ng_friends_baskets'
+    var url = '/ng_friends_baskets'
 
     var promise = $http({
       url: url,

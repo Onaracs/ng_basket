@@ -3,7 +3,8 @@ angular.module('getLinks', [])
 .factory('usersInbox', ['$http', function($http) {
 
   return function() {
-    var url = 'http://localhost:3000/ng_inbox_links'
+    // var url = 'http://localhost:3000/ng_inbox_links'
+    var url = '/ng_inbox_links'
 
     var promise = $http({
       url: url,

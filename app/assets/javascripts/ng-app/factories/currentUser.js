@@ -4,7 +4,8 @@ angular.module('currentUser', [])
 
   return function() {
 
-    var url = 'http://localhost:3000/ng_current_user'
+    // var url = 'http://localhost:3000/ng_current_user'
+    var url = '/ng_current_user'
 
     var promise = $http({
       url: url,
