@@ -29,7 +29,7 @@ angular.module('BasketCtrl', [
   $scope.createBasket = function() {
 
     var promise = $http({
-      url: 'http://localhost:3000/folders',
+      url: '/folders',
       dataType: 'json',
       method: 'POST',
       params: {
