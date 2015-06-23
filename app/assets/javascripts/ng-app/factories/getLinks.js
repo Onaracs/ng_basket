@@ -23,3 +23,27 @@ angular.module('getLinks', [])
   }
 
 }])
+
+.factory('recentlySavedLinks', ['$http', function($http) {
+
+  return function() {
+    // var url = 'http://localhost:3000/ng_inbox_links'
+    var url = '/last_saved_links'
+
+    var promise = $http({
+      url: url,
+      method: 'GET'
+    }).success(function(response) {
+
+      return response;
+
+    }).error(function(response) {
+
+      return {'status': false};
+
+    })
+
+    return promise
+  }
+
+}])
