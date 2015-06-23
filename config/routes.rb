@@ -17,6 +17,9 @@ Rails.application.routes.draw do
   resources :shared_links
   resources :join_baskets, only: [:create, :destroy]
 
+  # match '/google9a7dbb01c4a97ed2.html', 
+  #       :to => proc { |env| [200, {}, ["google-site-verification: google9a7dbb01c4a97ed2.html"]] }
+
   root "public#new_about"
 
   # Extension Routes

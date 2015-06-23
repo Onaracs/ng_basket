@@ -20,6 +20,12 @@ class LinksController < ApplicationController
 
   end
 
+  def last_saved_links
+
+    folders = Folder.where(user_id: current_user.id)
+
+  end
+
   def destroy
 
     link = Link.find(params[:id])    
