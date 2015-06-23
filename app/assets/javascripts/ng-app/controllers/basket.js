@@ -1,15 +1,18 @@
+
 angular.module('BasketCtrl', [
   'getBaskets', 
   'newBasketButtonDirective',
   'currentUser',
+  'getLinks',
   'basketsInfoBox'
 ])
 
-.controller('BasketCtrl', ['$scope', '$http', 'getUsersBaskets', 'getCurrentUser', function(
+.controller('BasketCtrl', ['$scope', '$http', 'getUsersBaskets', 'getCurrentUser', 'recentlySavedLinks', function(
   $scope,
   $http,
   getUsersBaskets,
-  getCurrentUser
+  getCurrentUser,
+  recentlySavedLinks
 ) {
 
   getCurrentUser().then(function(response) {
@@ -24,6 +27,13 @@ angular.module('BasketCtrl', [
     $scope.baskets = result.data;
 
   });
+
+  recentlySavedLinks().then(function(response) {
+
+    console.log(response);
+    $scope.recentLinks = response.data;
+
+  })
 
   // move this logic to the basket-button-directive
   $scope.createBasket = function() {

@@ -30,14 +30,12 @@ class LinksController < ApplicationController
     links.each do |link|
       link_info = {}
       link_info[:link] = link
-      link_info[:basket] = Folder.find(folder_id)
+      link_info[:basket] = Folder.find(link.folder_id)
 
       @returned_links << link_info
     end
 
-    p "=============================="
-    p @returned_links
-    p "=============================="
+    render :json => @returned_links
 
   end
 

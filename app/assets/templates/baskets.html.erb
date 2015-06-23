@@ -50,7 +50,56 @@
 
   <div ui-view>
 
-    <baskets-info-box></baskets-info-box>
+    <h2>Recently Saved Links</h2>
+    <!-- <baskets-info-box></baskets-info-box> -->
+    <ul class="link-list">
+
+      <li ng-repeat="link in recentLinks | orderBy: '-created_at'">
+
+        <div class="link-wrapper">
+
+          <div class="basket-info">
+
+            <a ui-sref="basket.links({basketID: link.basket.id})">
+
+              <i class="icon-Basket"></i><p>{{link.basket.name}}</p>
+
+            </a>
+
+          </div>
+
+<!--           <i class="fa fa-trash link-trash"
+              ng-click="showDeleteLinkModal = !showDeleteLinkModal"></i>
+
+          <div ng-class="{'hide-modal': showDeleteLinkModal === false}">
+
+            <popup-delete-link-modal
+                  show-delete-link="showDeleteLinkModal"
+                  link-id="link.id"
+                  basket-id="link.folder_id"
+                  link-title="link.title"
+                  links="$parent.links"
+            ></popup-delete-link-modal>
+
+          </div> -->
+
+          <a href="{{link.link.url}}" target="_blank" class="link">
+            
+            <img ng-src="{{link.link.image}}" alt="test"/>
+
+            <p class="date-time">{{link.link.created_at | date : format : timezone}}</p>
+
+            <p class="title">{{link.link.title}}</p>
+
+            <p class="message">{{link.link.message}}</p>
+            
+          </a>
+
+        </div>  <!-- link-wrapper -->
+
+      </li> <!-- ng-repeat -->
+
+    </ul> <!-- link-list -->
 
   </div>
 
