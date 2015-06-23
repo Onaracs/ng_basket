@@ -22,7 +22,22 @@ class LinksController < ApplicationController
 
   def last_saved_links
 
-    folders = Folder.where(user_id: current_user.id)
+    user = User.find(current_user.id)
+    links = user.links.limit(10)
+
+    @returned_links = []
+
+    links.each do |link|
+      link_info = {}
+      link_info[:link] = link
+      link_info[:basket] = Folder.find(folder_id)
+
+      @returned_links << link_info
+    end
+
+    p "=============================="
+    p @returned_links
+    p "=============================="
 
   end
 
