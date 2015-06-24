@@ -30,7 +30,6 @@ angular.module('BasketCtrl', [
 
   recentlySavedLinks().then(function(response) {
 
-    console.log(response);
     $scope.recentLinks = response.data;
 
   })

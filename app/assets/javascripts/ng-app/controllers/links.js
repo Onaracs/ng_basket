@@ -2,7 +2,8 @@ angular.module('LinkCtrl', [
   'getBaskets',
   'popupDeleteBasketModal',
   'popupDeleteLinkModal',
-  'basketFollowersSection'
+  'basketFollowersSection',
+  'linkWrapperDirective'
 ])
 
 .controller('LinkCtrl', ['$stateParams', '$scope', '$http', '$state', 'getBasketInfo', function(

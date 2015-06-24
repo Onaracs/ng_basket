@@ -37,7 +37,11 @@
 
   <li ng-repeat="link in links | orderBy: '-created_at'">
 
-    <div class="link-wrapper">
+    <link-wrapper
+      link="link"
+    ></link-wrapper>
+
+    <!-- <div class="link-wrapper">
 
       <i class="fa fa-trash link-trash"
           ng-click="showDeleteLinkModal = !showDeleteLinkModal"></i>
@@ -66,7 +70,7 @@
         
       </a>
 
-    </div>  <!-- link-wrapper -->
+    </div> -->
 
   </li> <!-- ng-repeat -->
 
