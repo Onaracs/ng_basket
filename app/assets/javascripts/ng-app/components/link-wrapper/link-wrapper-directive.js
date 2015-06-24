@@ -4,11 +4,14 @@ angular.module('linkWrapperDirective', ['popupDeleteLinkModal'])
     return {
       restrict: 'EA',
       scope: {
-        link: '='
+        link: '=',
+        basket: '='
       },
       templateUrl: 'ng-app/components/link-wrapper/link-wrapper.html',
       link: function( scope, $ele, $attrs ) {
 
+        console.log($attrs);
+        scope.page = $attrs.type;
         scope.showDeleteLinkModal = false;
 
       }

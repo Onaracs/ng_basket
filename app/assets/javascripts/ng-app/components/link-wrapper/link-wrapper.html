@@ -1,4 +1,16 @@
   <div class="link-wrapper">
+
+    <!-- Recently Saved Links - Basket Route -->
+    <div class="basket-info"
+          ng-show="page === 'recentlySaved'">
+
+      <a ui-sref="basket.links({basketID: basket.id})">
+
+        <i class="icon-Basket"></i><p>{{basket.name}}</p>
+
+      </a>
+
+    </div>
     
     <i class="fa fa-trash link-trash"
         ng-click="showDeleteLinkModal = !showDeleteLinkModal">
@@ -20,7 +32,9 @@
       
       <img ng-src="{{link.image}}" alt="test"/>
 
-      <p class="sender">Sent From: {{link.sender}}</p>
+      <p class="sender"
+          ng-show="page === 'inboxLinks'">Sent From: {{link.sender}}
+      </p>
 
       <p class="date-time">{{link.created_at | date : format : timezone}}</p>
 

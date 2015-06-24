@@ -56,31 +56,11 @@
 
       <li ng-repeat="link in recentLinks | orderBy: '-created_at'">
 
-        <div class="link-wrapper">
-
-          <div class="basket-info">
-
-            <a ui-sref="basket.links({basketID: link.basket.id})">
-
-              <i class="icon-Basket"></i><p>{{link.basket.name}}</p>
-
-            </a>
-
-          </div>
-
-          <a href="{{link.link.url}}" target="_blank" class="link">
-            
-            <img ng-src="{{link.link.image}}" alt="test"/>
-
-            <p class="date-time">{{link.link.created_at | date : format : timezone}}</p>
-
-            <p class="title">{{link.link.title}}</p>
-
-            <p class="message">{{link.link.message}}</p>
-            
-          </a>
-
-        </div>  <!-- link-wrapper -->
+        <link-wrapper
+          link="link.link"
+          basket="link.basket"
+          type="recentlySaved"
+        ></link-wrapper>
 
       </li> <!-- ng-repeat -->
 
