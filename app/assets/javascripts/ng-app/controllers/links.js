@@ -15,7 +15,6 @@ angular.module('LinkCtrl', [
 ) {
 
   $scope.showDeleteBasketModal = false;
-  $scope.showDeleteLinkModal = false;
 
   $scope.basketID = $stateParams.basketID;
 

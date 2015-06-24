@@ -7,7 +7,7 @@ angular.module('linkWrapperDirective', ['popupDeleteLinkModal'])
         link: '='
       },
       templateUrl: 'ng-app/components/link-wrapper/link-wrapper.html',
-      link: function( scope ) {
+      link: function( scope, $ele, $attrs ) {
 
         scope.showDeleteLinkModal = false;
 
