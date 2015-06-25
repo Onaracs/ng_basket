@@ -14,7 +14,7 @@ angular.module('popupDeleteLinkModal', [])
       templateUrl: 'ng-app/components/popup-delete-link-modal/popup-delete-link-modal.html',
       link: function( scope, $ele, $attrs ) {
 
-        
+        // console.log(scope);
         scope.deleteLink = function(basketID, linkID) {
 
           scope.showDeleteLink = false;

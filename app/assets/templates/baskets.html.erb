@@ -51,7 +51,7 @@
   <div ui-view>
 
     <h2>Recently Saved Links</h2>
-    <!-- <baskets-info-box></baskets-info-box> -->
+    
     <ul class="link-list">
 
       <li ng-repeat="link in recentLinks | orderBy: '-created_at'">
@@ -62,9 +62,9 @@
           type="recentlySaved"
         ></link-wrapper>
 
-      </li> <!-- ng-repeat -->
+      </li>
 
-    </ul> <!-- link-list -->
+    </ul>
 
   </div>
 

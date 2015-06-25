@@ -13,6 +13,7 @@
     </div>
     
     <i class="fa fa-trash link-trash"
+        ng-show="page === 'basketLinks'"
         ng-click="showDeleteLinkModal = !showDeleteLinkModal">
     </i>
 
@@ -23,14 +24,14 @@
             link-id="link.id"
             basket-id="link.folder_id"
             link-title="link.title"
-            links="$parent.links"
+            links="listOfLinks"
       ></popup-delete-link-modal>
 
     </div>
 
     <a href="{{link.url}}" target="_blank" class="link">
       
-      <img ng-src="{{link.image}}" alt="test"/>
+      <img ng-src="{{link.image}}" ng-show="link.image" alt="test"/>
 
       <p class="sender"
           ng-show="page === 'inboxLinks'">Sent From: {{link.sender}}

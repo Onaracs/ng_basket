@@ -37,12 +37,13 @@
 
   <li ng-repeat="link in links | orderBy: '-created_at'">
 
-    <link-wrapper
+<!--     <link-wrapper
       link="link"
+      list-of-links="links"
       type="basketLinks"
-    ></link-wrapper>
+    ></link-wrapper> -->
 
-    <!-- <div class="link-wrapper">
+    <div class="link-wrapper">
 
       <i class="fa fa-trash link-trash"
           ng-click="showDeleteLinkModal = !showDeleteLinkModal"></i>
@@ -71,7 +72,7 @@
         
       </a>
 
-    </div> -->
+    </div>
 
   </li> <!-- ng-repeat -->
 

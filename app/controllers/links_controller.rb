@@ -23,7 +23,7 @@ class LinksController < ApplicationController
   def last_saved_links
 
     user = User.find(current_user.id)
-    links = user.links.limit(10)
+    links = user.links.order('created_at desc').limit(10)
 
     @returned_links = []
 
