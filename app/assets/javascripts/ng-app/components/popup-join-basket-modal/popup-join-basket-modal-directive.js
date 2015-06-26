@@ -15,7 +15,7 @@ angular.module('popupJoinBasketModal', [])
         scope.joinBasket = function() {
 
           var promise = $http({
-            url: 'http://localhost:3000/join_baskets',
+            url: '/join_baskets',
             dataType: 'json',
             method: 'POST',
             params: {

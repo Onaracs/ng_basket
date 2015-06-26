@@ -20,7 +20,7 @@ angular.module('popupDeleteLinkModal', [])
           scope.showDeleteLink = false;
 
           var promise = $http({
-            url: 'http://localhost:3000/links/' + linkID,
+            url: '/links/' + linkID,
             method: 'DELETE',
             params: {
               basketID: basketID,

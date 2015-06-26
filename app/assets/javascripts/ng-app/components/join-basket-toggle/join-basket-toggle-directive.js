@@ -42,11 +42,8 @@ angular.module('joinBasketToggle', ['popupJoinBasketModal'])
 
         scope.unfollow = function(userID, basketID) {
 
-          console.log('unfolloing this basket!')
-          console.log(userID)
-          console.log(basketID)
           var promise = $http({
-            url: 'http://localhost:3000/join_baskets/' + userID + basketID,
+            url: '/join_baskets/' + userID + basketID,
             method: 'DELETE',
             params: {
               userID: userID,
