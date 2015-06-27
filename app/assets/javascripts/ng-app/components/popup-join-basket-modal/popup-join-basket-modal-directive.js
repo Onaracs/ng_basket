@@ -12,6 +12,14 @@ angular.module('popupJoinBasketModal', [])
       templateUrl: 'ng-app/components/popup-join-basket-modal/popup-join-basket-modal.html',
       link: function( scope, $ele, $attrs ) {
         
+        console.log(scope);
+
+        scope.$watch('basketId', function(newVal, oldVal) {
+
+          console.log(newVal);
+
+        }) // $watchGroup
+
         scope.joinBasket = function() {
 
           var promise = $http({

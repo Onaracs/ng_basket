@@ -6,11 +6,11 @@
   </h2>
 
   <div ng-show="showJoinModal">
-
+    {{basket}}
     <popup-join-basket-modal
           show-join-modal="showJoinModal"
           user-id="user.id"
-          basket-id="basketID">
+          basket-id="$parent.info.id">
     </popup-join-basket-modal>
 
   </div>

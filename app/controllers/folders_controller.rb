@@ -71,6 +71,10 @@ class FoldersController < ApplicationController
       end
 
     end
+
+    p "============================="
+    p @all_folders
+    p "============================="
     
     respond_to do |format|
       format.json { render :json => @all_folders.flatten! }

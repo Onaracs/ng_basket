@@ -23,11 +23,13 @@ angular.module('joinBasketToggle', ['popupJoinBasketModal'])
       scope: {
         followers: '=',
         user: '=',
+        basket: '=',
         showJoinModal: '='
       },
       templateUrl: 'ng-app/components/join-basket-toggle/join-basket-toggle.html',
       link: function( scope, $ele, $attrs ) {
 
+        console.log(scope);
         // very Hackey!!!
         // look to refactor
         scope.$watchGroup(['user', 'followers'], function(newVal, oldVal) {

@@ -15,6 +15,7 @@ angular.module('BasketCtrl', [
   recentlySavedLinks
 ) {
 
+  console.log($scope);
   getCurrentUser().then(function(response) {
 
     $scope.user = response.data;
@@ -24,13 +25,13 @@ angular.module('BasketCtrl', [
   // Make call to Rails API to get a list of the users baskets
   getUsersBaskets().then(function(result) {
 
+    console.log(result);
     $scope.baskets = result.data;
 
   });
 
   recentlySavedLinks().then(function(response) {
 
-    console.log(response);
     $scope.recentLinks = response.data;
 
   })

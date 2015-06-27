@@ -21,6 +21,7 @@
   <join-basket-toggle
     followers="followers"
     user="user"
+    basket="info"
     show-join-modal="showJoinModal">
   </join-basket-toggle>
 
@@ -43,8 +44,7 @@
           <img ng-src="{{link.image}}" alt="test"/>
           <p class="date-time">{{link.created_at | date : format : timezone}}</p>
           <p class="title">{{link.title}}</p>
-          <!-- <p class="description">{{link.description}}</p> -->
-          <p class="message">{{link.message | limitTo: 15 }}{{link.message.length > 15 ? '...' : ''}}</p>
+          <p class="message">{{link.message}}</p>
           <!-- <p>{{link.description}}</p> -->
         </a>
       </div>  <!-- link-wrapper -->
