@@ -7,18 +7,19 @@
       <div class="modal-header">
 
         <h4 class="modal-title">
-          <!-- Join {{linkTitle}}? -->
-          Join 'Foo Bar'
-          Owner: 'Hello'
+          You are about to join<br>
+          Basket: {{basket.name}}<br>
+          Owner: {{user.name}}
         </h4>
 
       </div>
 
       <div class="modal-body">
-        <p>By joining you will be able to:</p>
+        <p>By joining <b>{{basket.name}}</b> you will be able to:</p>
         <ul>
           <li>Save links to this basket</li>
-          <li>Collaborate....</li>
+          <li>Have this basket listed with your created baskets</li>
+          <li>Collaborate with the other people following this basket</li>
         </ul>
       </div>
 

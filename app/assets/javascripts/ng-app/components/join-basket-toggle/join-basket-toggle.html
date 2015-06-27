@@ -2,22 +2,24 @@
 
   <h2 ng-hide="following" 
     ng-click="showJoinModal = true">
-    <i class="icon-plus"></i> Follow Basket
+    <!-- <i class="icon-plus"></i> Follow Basket -->
+    + Follow Basket
   </h2>
 
   <div ng-show="showJoinModal">
     {{basket}}
     <popup-join-basket-modal
           show-join-modal="showJoinModal"
-          user-id="user.id"
-          basket-id="$parent.info.id">
+          user="user"
+          basket="$parent.info">
     </popup-join-basket-modal>
 
   </div>
 
   <h2 ng-show="following" 
       ng-click="unfollow(user.id, $parent.info.id)">
-      <i class="icon-remove"></i> Unfollow Basket
+      <!-- <i class="icon-remove"></i> Unfollow Basket -->
+      - Unfollow Basket
   </h2>
 
 </div>

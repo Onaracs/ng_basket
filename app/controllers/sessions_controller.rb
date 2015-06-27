@@ -16,6 +16,7 @@ class SessionsController < ApplicationController
 
   def destroy
 
+    binding.pry
     session[:user_id] = nil
     redirect_to root_path
     

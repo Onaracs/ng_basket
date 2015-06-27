@@ -6,19 +6,11 @@ angular.module('popupJoinBasketModal', [])
       restrict: 'EA',
       scope: {
         showJoinModal: '=', // for html file
-        userId: '=',
-        basketId: '='
+        user: '=',
+        basket: '='
       },
       templateUrl: 'ng-app/components/popup-join-basket-modal/popup-join-basket-modal.html',
       link: function( scope, $ele, $attrs ) {
-        
-        console.log(scope);
-
-        scope.$watch('basketId', function(newVal, oldVal) {
-
-          console.log(newVal);
-
-        }) // $watchGroup
 
         scope.joinBasket = function() {
 
@@ -27,8 +19,8 @@ angular.module('popupJoinBasketModal', [])
             dataType: 'json',
             method: 'POST',
             params: {
-              userID: scope.userId,
-              basketID: scope.basketId
+              userID: scope.user.id,
+              basketID: scope.basket.id
             },
             headers: {'Content-Type': 'application/json'}
           }).success(function(response) {
