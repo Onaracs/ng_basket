@@ -36,9 +36,22 @@
         float: right;
         text-transform: uppercase;
         // font-family: 'Lato';
+        .download-extension-btn {
+          -webkit-filter: grayscale(100%);
+          img {
+            width: 20px;
+          }
+          &:hover {
+            -webkit-filter: grayscale(0%);
+          }
+        }
+        .user-name {
+          padding: 10px 0 15px 10px;
+        }
         a {
           color: #8C8A8A;
           text-shadow: 0 0px;
+          cursor: pointer;
           &:hover {
             border-bottom: 1px solid #222;
             color: #000;

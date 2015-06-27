@@ -24,7 +24,7 @@
             <li ng-show="user">
               <a ui-sref="basket">
 <!--                 <img ng-src="{{user.image}}" /> -->
-                My Baskets
+                Baskets
 
               </a>
             </li>
@@ -38,8 +38,8 @@
               <a class='download-extension-btn'
                 ng-click="chromeExtensionInstall()">
                 <!-- <a class='download-extension-btn'> -->
-                <%#= image_tag 'chrome2.png', class: "chrome-img" %>
-                Chrome Extension
+                <%= image_tag 'chrome2.png', class: "chrome-img" %>
+                Extension
               </a>
             </li>
 
@@ -49,9 +49,12 @@
                 <i class="fa fa-facebook-square icon facebook"></i>Login
               </a>
             </li>
+
+            <li ng-show="user" class="user-name">
+              <p>{{user.name}} |</p>
+            </li>
             
             <li ng-show="user">
-              <p>{{user.name}}</p>
               <a href="/signout">Signout</a>
             </li>
 
