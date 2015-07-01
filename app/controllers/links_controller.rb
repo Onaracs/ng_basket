@@ -4,7 +4,7 @@ class LinksController < ApplicationController
   skip_before_filter  :verify_authenticity_token
 
   def new_link
-
+    
     @link = Link.new(url: params["url"],
                       title: params["title"],
                       message: params["message"],

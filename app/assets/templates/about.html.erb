@@ -1,0 +1,24 @@
+<div class='get-started-wrapper'>
+  <ul>
+    <h1>Use Basket to:</h1>
+    <li>Share links with friends</li>
+    <li>Save your favorite links</li>
+    <li>Create collaborative baskets for easy saving and sharing</li>
+  </ul>
+  <h4>Get Started</h4>
+  <div class="get-started-btn-wrapper">
+    <a class='download-extension-btn'
+      ng-click="chrome.webstore.install()">
+      <!-- <a class='download-extension-btn'> -->
+      <%= image_tag 'chrome2.png', class: "chrome-img" %>
+      Extension
+    </a>
+  </div>
+  <div class="get-started-btn-wrapper">
+    <a href="/auth/facebook">
+      <div class='sign-into-facebook'>
+        <i class = "fa fa-facebook-square icon facebook"></i><p>Login with Facebook</p>
+      </div>
+    </a>
+  </div>
+</div>
