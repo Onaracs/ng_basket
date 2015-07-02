@@ -15,7 +15,6 @@ angular.module('BasketCtrl', [
   recentlySavedLinks
 ) {
 
-  console.log($scope);
   getCurrentUser().then(function(response) {
 
     $scope.user = response.data;

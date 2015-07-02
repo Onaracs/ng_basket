@@ -4,7 +4,7 @@ class FoldersController < ApplicationController
   respond_to :json, :html, :js
 
   def create
-
+    binding.pry
     @folder = Folder.new(name: params["name"],
                         user_id: current_user.id)
 
