@@ -6,6 +6,12 @@
     <li>Save your favorite links</li>
     <li>Create collaborative baskets for easy saving and sharing</li>
   </ul>
+  <div ng-show="user.name">
+    <h1>Hi {{user.name}}!</h1>
+    <h3>Start using Basket by:</h3>
+    <h4><a ui-sref="basket">View your baskets and saved links</a></h4>
+    <h4><a ui-sref="friends">Seeing your friends baskets, and join ones they created</a></h4>
+  </div>
 <!--   <h4>Get Started</h4>
   <div class="get-started-btn-wrapper">
     <a class='download-extension-btn'
