@@ -1,4 +1,5 @@
 <div class='get-started-wrapper'>
+  <div ng-hide="user.name">
   <h1>About Page (work in progress)</h1>
   <ul>
     <h3>Use Basket to:</h3>
@@ -6,6 +7,7 @@
     <li>Save your favorite links</li>
     <li>Create collaborative baskets for easy saving and sharing</li>
   </ul>
+  </div>
   <div ng-show="user.name">
     <h1>Hi {{user.name}}!</h1>
     <h3>Start using Basket by:</h3>
