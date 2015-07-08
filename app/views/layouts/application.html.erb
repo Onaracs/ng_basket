@@ -4,7 +4,9 @@
   <title>Basket</title>
   <!-- <link rel="shortcut icon" href="../assets/images/flavicon.ico" type="image/x-icon" />
   <link rel="shortcut icon" href="../assets/images/favicon.ico"> -->
-  <%#= favicon_link_tag 'favicon.ico' %>
+  <%= favicon_link_tag 'favicon.ico' %>
+  <link rel='stylesheet' type='text/css' href='https://fonts.googleapis.com/css?family=Lato|Montserrat'>
+
   <%= javascript_include_tag 'application' %>
   <%= stylesheet_link_tag    'application', media: 'all' %>
   <%= csrf_meta_tags %>
@@ -20,10 +22,9 @@
   <meta property="twitter:title" content="Basket" />
   <meta property="twitter:description" content="Social bookmarking site to easily save and share your favorite links with your friends. Download the chrome extension to get the full functionality." />
 
-  <link rel='stylesheet' type='text/css' href='https://fonts.googleapis.com/css?family=Lato|Montserrat'>
 
   <!-- <link rel="stylesheet" href="/../assets/font-awesome-4.0.3/css/font-awesome.min.css"> -->
-  <script src="https://connect.facebook.net/en_US/all.js"></script>
+  <script async src="https://connect.facebook.net/en_US/all.js"></script>
   <link rel="chrome-webstore-item" href="https://chrome.google.com/webstore/detail/iiepclkcbcdkcafbpgccgigolhcilbgi">
   
 </head>
@@ -40,8 +41,6 @@
       <div class="main-view-container" ui-view></div>
     </div> <!-- row -->
   </div> <!-- container -->
-
-  <script src="https://connect.facebook.net/en_US/all.js"></script>
 
 </body>
 </html>
