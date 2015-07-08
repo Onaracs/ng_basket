@@ -38,8 +38,7 @@
     <li ng-repeat="link in links | orderBy: '-created_at'">
 
       <div class="link-wrapper">
-        <i class="fa fa-trash link-trash"
-            ng-click="deleteLink(link.folder_id, link.id)"></i>
+        
         <a href="{{link.url}}" target="_blank" class="link">
           <img ng-src="{{link.image}}" alt="test"/>
           <p class="date-time">{{link.created_at | date : format : timezone}}</p>
