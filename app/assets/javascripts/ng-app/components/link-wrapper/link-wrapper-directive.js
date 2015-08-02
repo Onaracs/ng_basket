@@ -1,5 +1,6 @@
-angular.module('linkWrapperDirective', ['popupDeleteLinkModal'])
-  .directive('linkWrapper', [function() {
+(function() {
+
+  function linkWrapper() {
 
     return {
       restrict: 'EA',
@@ -16,6 +17,13 @@ angular.module('linkWrapperDirective', ['popupDeleteLinkModal'])
         scope.showDeleteLinkModal = false;
 
       }
-    }
 
-  }])
+    }
+    
+  }
+
+  angular
+    .module('linkWrapperDirective', ['popupDeleteLinkModal'])
+    .directive('linkWrapper', linkWrapper)
+
+})()

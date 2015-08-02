@@ -1,5 +1,6 @@
-angular.module('joinBasketToggle', ['popupJoinBasketModal'])
-  .directive('joinBasketToggle', ['$http', function( $http ) {
+(function() {
+
+  function joinBasketToggle( $http ) {
 
     var checkJoinStatus = function(user, followers) {
 
@@ -67,4 +68,10 @@ angular.module('joinBasketToggle', ['popupJoinBasketModal'])
 
     } // return
 
-  }])
+  }
+
+  angular
+    .module('joinBasketToggle', ['popupJoinBasketModal'])
+    .directive('joinBasketToggle', ['$http', joinBasketToggle])
+
+})();
