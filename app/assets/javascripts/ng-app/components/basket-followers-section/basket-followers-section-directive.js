@@ -1,5 +1,6 @@
-angular.module('basketFollowersSection', [])
-  .directive('basketFollowersSection', function() {
+(function() {
+
+  function basketFollowersSection() {
 
     return {
       restrict: 'E',
@@ -9,4 +10,10 @@ angular.module('basketFollowersSection', [])
       templateUrl: 'ng-app/components/basket-followers-section/basket-followers-section.html',
     } // return
 
-  })
+  }
+
+  angular
+    .module('basketFollowersSection', [])
+    .directive('basketFollowersSection', basketFollowersSection)
+
+})();
