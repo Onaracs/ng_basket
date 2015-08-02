@@ -1,30 +1,35 @@
-angular.module('NavBar', ['currentUser'])
-  .directive('navBar', ['$rootScope', 'getCurrentUser', function navBar( 
-    $rootScope, 
-    getCurrentUser 
-  ) {
+(function() {
 
-  return {
-    restrict: 'EA',
-    scope: {
-      user: '='
-    },
-    templateUrl: 'ng-app/components/nav-bar/nav-bar.html',
-    link: function ( scope, $ele, $attrs ) {
+  function navBar($rootScope, getCurrentUser) {
 
-      getCurrentUser().then(function(result) {
+    return {
+      restrict: 'EA',
+      scope: {
+        user: '='
+      },
+      templateUrl: 'ng-app/components/nav-bar/nav-bar.html',
+      link: function ( scope, $ele, $attrs ) {
 
-        $rootScope.user = result.data;
-        scope.user = result.data;
+        getCurrentUser().then(function(result) {
 
-      })
+          $rootScope.user = result.data;
+          scope.user = result.data;
 
-      scope.chromeExtensionInstall = function() {
-        console.log('install extension')
-        chrome.webstore.install();
+        })
+
+        scope.chromeExtensionInstall = function() {
+          console.log('install extension')
+          chrome.webstore.install();
+        }
+
       }
 
     }
+
   }
 
-}]);
+  angular
+    .module('NavBar', ['currentUser'])
+    .directive('navBar', ['$rootScope', 'getCurrentUser', navBar]) 
+
+})();
