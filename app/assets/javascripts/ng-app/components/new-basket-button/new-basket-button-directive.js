@@ -1,5 +1,6 @@
-angular.module('newBasketButtonDirective', [])
-  .directive('newBasketButton', [function() {
+(function() {
+
+  function newBasketButton() {
 
     return {
       restrict: 'EA',
@@ -9,4 +10,10 @@ angular.module('newBasketButtonDirective', [])
       templateUrl: 'ng-app/components/new-basket-button/new-basket-button.html'
     }
 
-  }])
+  }
+
+  angular
+    .module('newBasketButtonDirective', [])
+    .directive('newBasketButton', newBasketButton)
+
+})
